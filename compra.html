@@ -5,77 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escolha a Cidade</title>
     <style>
+        /* Estilos básicos para o corpo da página */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #000;
-            color: white;
-            margin: 0;
-            padding: 0;
+            font-family: Arial, sans-serif; /* Fonte padrão da página */
+            background-color: #000; /* Fundo preto */
+            color: white; /* Texto branco */
+            margin: 0; /* Remove margens padrão */
+            padding: 0; /* Remove espaçamentos internos padrão */
         }
+
+        /* Centraliza o conteúdo na tela */
         .container {
-            text-align: center;
-            margin: 20px;
+            text-align: center; /* Alinha todo o conteúdo ao centro */
+            margin: 20px; /* Margem ao redor da seção */
         }
+
+        /* Estilo para o título principal */
         .title {
-            font-size: 24px;
-            margin-bottom: 30px;
+            font-size: 24px; /* Tamanho da fonte do título */
+            margin-bottom: 30px; /* Espaço abaixo do título */
         }
+
+        /* Estilos para o contêiner de cada evento */
         .event {
-            background-color: white;
-            color: black;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 20px auto;
-            padding: 10px;
-            border-radius: 10px;
-            max-width: 800px;
+            background-color: white; /* Fundo branco para cada evento */
+            color: black; /* Texto preto dentro do contêiner */
+            display: flex; /* Layout flexível para alinhar elementos */
+            justify-content: space-between; /* Espaça igualmente os elementos horizontalmente */
+            align-items: center; /* Alinha verticalmente os itens no centro */
+            margin: 20px auto; /* Espaço entre os eventos e centraliza */
+            padding: 10px; /* Espaçamento interno */
+            border-radius: 10px; /* Bordas arredondadas */
+            max-width: 800px; /* Limita a largura máxima do contêiner */
         }
+
+        /* Estilo para as imagens dos eventos */
         .event img {
-            width: 200px;
-            height: 100px;
-            border-radius: 10px;
+            width: 200px; /* Largura da imagem */
+            height: 100px; /* Altura da imagem */
+            border-radius: 10px; /* Bordas arredondadas da imagem */
         }
+
+        /* Estilo para a seção de detalhes do evento */
         .event-details {
-            flex-grow: 1;
-            padding-left: 20px;
+            flex-grow: 1; /* Faz com que essa seção cresça para ocupar o espaço disponível */
+            padding-left: 20px; /* Adiciona um espaço à esquerda dos detalhes */
         }
+
+        /* Estilo dos botões de reserva */
         .reserve-button {
-            padding: 10px 20px;
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
+            padding: 10px 20px; /* Espaçamento interno dos botões */
+            background-color: #f0f0f0; /* Cor de fundo inicial dos botões */
+            border: 1px solid #ccc; /* Borda cinza clara */
+            border-radius: 5px; /* Bordas arredondadas */
+            cursor: pointer; /* Altera o cursor para indicar clicável */
+            transition: background-color 0.3s ease; /* Efeito de transição suave ao passar o mouse */
         }
 
+        /* Efeito ao passar o mouse sobre o botão de reserva */
         .reserve-button:hover {
-            background-color: #84e5e9;
-            border-color: #000000;
+            background-color: #84e5e9; /* Cor de fundo ao passar o mouse */
+            border-color: #000000; /* Muda a cor da borda para preto */
         }
 
+        /* Estilo para o botão de reserva quando selecionado */
         .reserve-button.selected {
-            background-color: #919696; /* Cor quando selecionado */
-            border-color: #000000;
+            background-color: #919696; /* Cor de fundo ao estar selecionado */
+            border-color: #000000; /* Borda preta */
         }
 
+        /* Estilo do botão "Próximo" */
         .next-button {
-            background-color: #f0f0f0;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 20px;
-            float: right;
-            margin-right: 335px;
+            background-color: #f0f0f0; /* Cor de fundo */
+            padding: 10px 20px; /* Espaçamento interno */
+            border: none; /* Sem bordas */
+            border-radius: 5px; /* Bordas arredondadas */
+            cursor: pointer; /* Cursor de clique */
+            margin-top: 20px; /* Espaço acima do botão */
+            float: right; /* Posiciona o botão à direita */
+            margin-right: 335px; /* Margem à direita para alinhamento */
         }
     </style>
 </head>
 <body>
 
+    <!-- Contêiner principal da página -->
     <div class="container">
         <h1 class="title">Escolha seu lugar no show e deixe a batida do rock te levar ao extremo!</h1>
 
+        <!-- Primeiro evento -->
         <div class="event">
             <img src="static/imgs/Joinville.svg" alt="Joinville">
             <div class="event-details">
@@ -84,6 +102,7 @@
             <button class="reserve-button">Reservar</button>
         </div>
 
+        <!-- Segundo evento -->
         <div class="event">
             <img src="static/imgs/Rio de Janeiro.svg" alt="Rio de Janeiro">
             <div class="event-details">
@@ -92,6 +111,7 @@
             <button class="reserve-button">Reservar</button>
         </div>
 
+        <!-- Terceiro evento -->
         <div class="event">
             <img src="static/imgs/Florianópolis.svg" alt="Florianópolis">
             <div class="event-details">
@@ -100,18 +120,20 @@
             <button class="reserve-button">Reservar</button>
         </div>
 
+        <!-- Botão para avançar para a próxima etapa -->
         <button class="next-button">Próximo</button>
     </div>
 
     <script>
-        // Adicionar funcionalidade de seleção ao clicar no botão de reserva
+        // Adiciona funcionalidade de seleção ao clicar nos botões de reserva
         document.querySelectorAll('.reserve-button').forEach(button => {
             button.addEventListener('click', function() {
-                // Se o botão já está selecionado, remove a seleção
+                // Verifica se o botão já está selecionado
                 if (this.classList.contains('selected')) {
+                    // Se estiver selecionado, remove a seleção
                     this.classList.remove('selected');
                 } else {
-                    // Adicionar a classe 'selected' ao botão clicado
+                    // Caso contrário, adiciona a classe 'selected'
                     this.classList.add('selected');
                 }
             });

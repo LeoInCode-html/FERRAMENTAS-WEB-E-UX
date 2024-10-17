@@ -5,53 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagamento</title>
     <style>
+        /* Define a imagem de fundo e o estilo do body */
         body {
-      background-image: url('static/imgs/Imagem\ fundo.svg');
-      background-size: cover; 
-      background-position: center; 
-      background-repeat: no-repeat;
-      height: 100vh;
-      margin: 0;
-      }
-      body {
-      display: flex;
-      justify-content: center;  
-      align-items: center;      
-      height: 100vh;            
-      margin: 0;               
-      }
-      .form-container {
-        border: 1px solid #ccc;
-        padding: 20px;
-        border-radius: 10px;
-        background-color: #f9f9f9;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-      label {
-        color: #f9f9f9;
-      }
+            background-image: url('static/imgs/Imagem\ fundo.svg'); /* Caminho da imagem de fundo */
+            background-size: cover; /* Faz com que a imagem cubra toda a tela */
+            background-position: center; /* Centraliza a imagem de fundo */
+            background-repeat: no-repeat; /* Impede que a imagem se repita */
+            height: 100vh; /* Define a altura da página como 100% da tela */
+            margin: 0; /* Remove a margem padrão */
+        }
+
+        /* Configurações adicionais para centralizar o formulário na página */
+        body {
+            display: flex;
+            justify-content: center;  /* Centraliza o conteúdo horizontalmente */
+            align-items: center;      /* Centraliza o conteúdo verticalmente */
+            height: 100vh;            /* Altura da página inteira */
+            margin: 0;                /* Remove qualquer margem externa */
+        }
+
+        /* Estilo da caixa de formulário */
+        .form-container {
+            border: 1px solid #ccc; /* Borda cinza ao redor do formulário */
+            padding: 20px; /* Espaçamento interno do formulário */
+            border-radius: 10px; /* Arredonda as bordas */
+            background-color: #f9f9f9; /* Cor de fundo clara */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra leve para dar profundidade */
+        }
+
+        /* Estilo dos rótulos do formulário */
+        label {
+            color: #f9f9f9; /* Cor clara para os textos do formulário */
+        }
     </style>
 </head>
 <body>
     <main>
-                <form action="/action_page.php">
-                    <label for="ncompleto">Nome completo</label><br>
-                    <input type="text" id="name" name="name" placeholder="Informe seu nome completo"><br>
-                    <label for="email">Email</label><br>
-                    <input type="text" id="email" name="email" placeholder="exemplo@exemplo.com"><br><br>
-                    <p>Dados de Pagamento</p>
-                    <label for="text">CPF</label><br>
-                    <input type="text" id="cpf" name="cpf" placeholder="xxx.xxx.xxx-xx"><br>
-                    <label for="cpf">Número do cartão</label><br>
-                    <input type="text" id="ncartao" name="ncartao" placeholder="Informe os números do cartão"><br>
-                    <label for="dvalidade">Data de validade</label><br>
-                    <input type="text" id="dvalidade" name="dvalidade" placeholder="mm/aaaa"><br>
-                    <label for="csegurança">Código de segurança</label><br>
-                    <input type="text" id="csegurança" name="csegurança" placeholder="Cvv"><br><br> 
-                    <label for="vtotal">Valor total</label><br>
-                    <input type="text" id="valor" name="valor"><br><br>
-                    <input type="submit" value="Finalizar compra">
-                  </form>
+        <!-- Formulário de pagamento -->
+        <form action="/action_page.php">
+            <!-- Campo de nome completo -->
+            <label for="ncompleto">Nome completo</label><br>
+            <input type="text" id="name" name="name" placeholder="Informe seu nome completo"><br>
+
+            <!-- Campo de e-mail -->
+            <label for="email">Email</label><br>
+            <input type="text" id="email" name="email" placeholder="exemplo@exemplo.com"><br><br>
+
+            <!-- Seção de dados de pagamento -->
+            <p>Dados de Pagamento</p>
+
+            <!-- Campo de CPF -->
+            <label for="cpf">CPF</label><br>
+            <input type="text" id="cpf" name="cpf" placeholder="xxx.xxx.xxx-xx"><br>
+
+            <!-- Campo para número do cartão -->
+            <label for="ncartao">Número do cartão</label><br>
+            <input type="text" id="ncartao" name="ncartao" placeholder="Informe os números do cartão"><br>
+
+            <!-- Campo para data de validade do cartão -->
+            <label for="dvalidade">Data de validade</label><br>
+            <input type="text" id="dvalidade" name="dvalidade" placeholder="mm/aaaa"><br>
+
+            <!-- Campo para código de segurança (CVV) -->
+            <label for="csegurança">Código de segurança</label><br>
+            <input type="text" id="csegurança" name="csegurança" placeholder="Cvv"><br><br> 
+
+            <!-- Campo para o valor total da compra -->
+            <label for="vtotal">Valor total</label><br>
+            <input type="text" id="valor" name="valor"><br><br>
+
+            <!-- Botão para finalizar a compra -->
+            <input type="submit" value="Finalizar compra">
+        </form>
     </main>
 </body>
 </html>
