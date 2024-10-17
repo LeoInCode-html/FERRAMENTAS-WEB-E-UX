@@ -10,20 +10,44 @@
       background-size: cover; 
       background-position: center; 
       background-repeat: no-repeat;
+      height: 100vh;
+      margin: 0;
+      }
+      body {
+      display: flex;
+      justify-content: center;  
+      align-items: center;      
+      height: 100vh;            
+      margin: 0;               
+      }
+      .form-container {
+        border: 1px solid #ccc;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      label {
+        color: #f9f9f9;
       }
     </style>
 </head>
 <body>
     <main>
                 <form action="/action_page.php">
-                    <label for="fname">Nome completo</label><br>
+                    <label for="ncompleto">Nome completo</label><br>
                     <input type="text" id="name" name="name" placeholder="Informe seu nome completo"><br>
-                    <label for="lname">Número do cartão</label><br>
-                    <input type="text" id="ncartao" name="ncartao" placeholder="Informe os números do cartão"><br>
-                    <label for="codsegurança">Código de segurança</label><br>
-                    <input type="text" id="codsegurança" name="codsegurança" placeholder="mm/aaaa"><br>
                     <label for="email">Email</label><br>
-                    <input type="text" id="email" name="email" placeholder="exemplo@exemplo.com"><br>
+                    <input type="text" id="email" name="email" placeholder="exemplo@exemplo.com"><br><br>
+                    <p>Dados de Pagamento</p>
+                    <label for="text">CPF</label><br>
+                    <input type="text" id="cpf" name="cpf" placeholder="xxx.xxx.xxx-xx"><br>
+                    <label for="cpf">Número do cartão</label><br>
+                    <input type="text" id="ncartao" name="ncartao" placeholder="Informe os números do cartão"><br>
+                    <label for="dvalidade">Data de validade</label><br>
+                    <input type="text" id="dvalidade" name="dvalidade" placeholder="mm/aaaa"><br>
+                    <label for="csegurança">Código de segurança</label><br>
+                    <input type="text" id="csegurança" name="csegurança" placeholder="Cvv"><br><br> 
                     <label for="vtotal">Valor total</label><br>
                     <input type="text" id="valor" name="valor"><br><br>
                     <input type="submit" value="Finalizar compra">
