@@ -4,144 +4,210 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mapa de Evento</title>
-<style>
+    <style>
+        /* Reseta margens e padding de todos os elementos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* Faz com que padding e border não aumentem a largura total dos elementos */
+        }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        /* Estilo do corpo da página */
+        body {
+            font-family: Arial, sans-serif; /* Fonte utilizada */
+            background-color: #000; /* Cor de fundo da página */
+            color: #fff; /* Cor do texto */
+            display: flex; /* Utiliza Flexbox para alinhar o conteúdo */
+            justify-content: center; /* Centraliza horizontalmente */
+            align-items: center; /* Centraliza verticalmente */
+            height: 100vh; /* Altura da viewport */
+        }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #000;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
+        /* Container principal para map-section e escolhas */
+        .container {
+            display: flex; /* Utiliza Flexbox para o layout */
+            flex-direction: row; /* Alinha os filhos em linha */
+            justify-content: space-between; /* Espaço igual entre os filhos */
+            width: 80%; /* Largura do container */
+            background-color: #111; /* Cor de fundo do container */
+            padding: 20px; /* Espaçamento interno do container */
+            border-radius: 10px; /* Bordas arredondadas */
+        }
 
-.container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: 80%;
-    background-color: #111;
-    padding: 20px;
-    border-radius: 10px;
-}
+        /* Estilo para a seção do mapa */
+        .map-section {
+            margin-right: 40px; /* Adiciona margem à direita para aumentar o espaço entre a imagem e as checkboxes */
+        }
 
-.map-section img {
-    width: 600px;
-    height: auto;
-    border-radius: 10px;
-}
+        .map-section img {
+            width: 600px; /* Largura da imagem */
+            height: auto; /* Mantém a proporção da imagem */
+            border-radius: 10px; /* Bordas arredondadas na imagem */
+        }
 
-.legend-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
+        /* Estilo para a seção de escolhas */
+        .escolhas {
+            display: flex; /* Utiliza Flexbox para o layout */
+            flex-direction: column; /* Alinha os itens em coluna */
+            align-items: flex-start; /* Alinha os itens à esquerda */
+            justify-content: center; /* Centraliza verticalmente */
+            margin-top: 20px; /* Espaçamento acima da seção */
+            font-size: 20px; /* Tamanho da fonte dos textos */
+        }
 
-.legend-item {
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-}
+        /* Estilo para cada linha de legendas */
+        .Legendas {
+            position: relative; /* Para posicionar o círculo em relação ao label */
+            margin-bottom: 15px; /* Espaçamento abaixo de cada legenda */
+            display: flex; /* Utiliza Flexbox para o layout */
+            align-items: center; /* Alinha verticalmente os itens no centro */
+            justify-content: flex-start; /* Alinha à esquerda */
+            width: 300px; /* Largura da seção de legendas */
+        }
 
-.legend-item input[type="checkbox"] {
-    margin-right: 10px;
-    transform: scale(1.5);
-}
+        /* Esconde o checkbox padrão */
+        .Legendas input[type="checkbox"] {
+            display: none; /* Esconde o checkbox padrão */
+        }
 
-.legend-item label {
-    font-size: 18px;
-    cursor: pointer;
-}
+        /* Estilo do label que representa a legenda */
+        .Legendas label {
+            position: relative; /* Permite posicionar o círculo antes do texto */
+            padding-left: 35px; /* Espaçamento à esquerda para o círculo */
+            cursor: pointer; /* Muda o cursor para indicar que é clicável */
+        }
 
-/* Cores para as opções selecionadas */
-input[type="checkbox"]#pista:checked + label {
-    color: rgb(24, 0, 240);
-}
+        /* Estilo para o círculo ao lado do label */
+        .Legendas label::before {
+            content: ''; /* Necessário para criar o círculo */
+            position: absolute; /* Permite posicionamento absoluto */
+            left: 0; /* Posiciona o círculo à esquerda */
+            top: 50%; /* Posiciona verticalmente no meio */
+            transform: translateY(-50%); /* Centraliza verticalmente o círculo */
+            width: 20px; /* Tamanho do círculo */
+            height: 20px; /* Tamanho do círculo */
+            border: 2px solid #fff; /* Cor da borda do círculo */
+            border-radius: 50%; /* Faz o círculo ser arredondado */
+            background-color: transparent; /* Cor de fundo do círculo */
+            transition: background-color 0.3s; /* Transição suave para mudança de cor */
+        }
 
-input[type="checkbox"]#area-vip:checked + label {
-    color: yellow;
-}
+        /* Estilo para o círculo quando o checkbox está marcado */
+        .Legendas input[type="checkbox"]:checked + label::before {
+            background-color: #fff; /* Cor de fundo do círculo padrão quando marcado */
+        }
 
-input[type="checkbox"]#camarote:checked + label {
-    color: rgb(122, 11, 167);
-}
+        /* Estilo do preço ao lado da legenda */
+        .Legendas .price {
+            margin-left: 10px; /* Espaçamento à esquerda do preço */
+            color: #fff; /* Cor do preço */
+        }
 
-input[type="checkbox"]#backstage:checked + label {
-    color: rgb(255, 4, 201);
-}
+        /* Cores para as opções selecionadas */
+        input[type="checkbox"]#pista:checked + label {
+            color: blue; /* Cor do texto quando marcado */
+        }
+        input[type="checkbox"]#pista:checked + label::before {
+            background-color: blue; /* Cor do círculo quando a opção Pista é marcada */
+        }
 
-input[type="checkbox"]#on-stage:checked + label {
-    color: rgb(0, 225, 255);
-}
+        input[type="checkbox"]#area-vip:checked + label {
+            color: yellow; /* Cor do texto quando marcado */
+        }
+        input[type="checkbox"]#area-vip:checked + label::before {
+            background-color: yellow; /* Cor do círculo quando a opção Área VIP é marcada */
+        }
 
-.next-button {
-    background-color: #fff;
-    color: #000;
-    border: none;
-    padding: 10px 20px;
-    font-size: 18px;
-    border-radius: 5px;
-    cursor: pointer;
-}
+        input[type="checkbox"]#camarote:checked + label {
+            color: purple; /* Cor do texto quando marcado */
+        }
+        input[type="checkbox"]#camarote:checked + label::before {
+            background-color: purple; /* Cor do círculo quando a opção Camarote é marcada */
+        }
 
-.next-button:hover {
-    background-color: #ddd;
-}
+        input[type="checkbox"]#backstage:checked + label {
+            color: pink; /* Cor do texto quando marcado */
+        }
+        input[type="checkbox"]#backstage:checked + label::before {
+            background-color: pink; /* Cor do círculo quando a opção Backstage é marcada */
+        }
 
-@media screen and (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
-    }
+        input[type="checkbox"]#on-stage:checked + label {
+            color: darkblue; /* Cor do texto quando marcado */
+        }
+        input[type="checkbox"]#on-stage:checked + label::before {
+            background-color: darkblue; /* Cor do círculo quando a opção On Stage é marcada */
+        }
 
-    .map-section img {
-        width: 100%;
-    }
+        /* Estilo do botão de próximo */
+        .next-button {
+            background-color: #fff; /* Cor de fundo do botão */
+            color: #000; /* Cor do texto do botão */
+            border: none; /* Remove a borda padrão */
+            padding: 15px 30px; /* Espaçamento interno do botão */
+            font-size: 20px; /* Tamanho da fonte do botão */
+            border-radius: 5px; /* Bordas arredondadas no botão */
+            cursor: pointer; /* Muda o cursor para indicar que é clicável */
+            margin-top: auto; /* Empurra o botão para o fundo da seção */
+            align-self: flex-end; /* Alinha o botão à direita na coluna */
+        }
 
-    .legend-section {
-        margin-top: 20px;
-    }
-}
+        /* Estilo do botão ao passar o mouse */
+        .next-button:hover {
+            background-color: #ddd; /* Muda a cor de fundo do botão ao passar o mouse */
+        }
 
-</style>
+        /* Estilos responsivos para telas menores */
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-direction: column; /* Alinha os itens em coluna em telas pequenas */
+                align-items: center; /* Centraliza horizontalmente */
+            }
 
+            .map-section img {
+                width: 100%; /* Faz a imagem ocupar 100% da largura do container */
+            }
+
+            .escolhas {
+                margin-top: 20px; /* Espaçamento acima da seção de escolhas */
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <div class="map-section">
             <img src="static/imgs/Locais_do_Show.svg" alt="Mapa do Evento">
         </div>
-        <div class="legend-section">
-            <div class="legend-item">
-                <input type="checkbox" id="pista" checked>
+        <div class="escolhas">
+            <!-- Cada opção de ingresso -->
+            <div class="Legendas" style="margin-bottom: 50px;"> <!-- Aumentei a margem inferior -->
+                <input type="checkbox" id="pista">
                 <label for="pista">Pista</label>
+                <span class="price">R$ 100,00</span>
             </div>
-            <div class="legend-item">
+            <div class="Legendas" style="margin-bottom: 50px;"> <!-- Aumentei a margem inferior -->
                 <input type="checkbox" id="area-vip">
                 <label for="area-vip">Área VIP</label>
+                <span class="price">R$ 200,00</span>
             </div>
-            <div class="legend-item">
+            <div class="Legendas" style="margin-bottom: 50px;"> <!-- Aumentei a margem inferior -->
                 <input type="checkbox" id="camarote">
                 <label for="camarote">Camarote</label>
+                <span class="price">R$ 300,00</span>
             </div>
-            <div class="legend-item">
+            <div class="Legendas" style="margin-bottom: 50px;"> <!-- Aumentei a margem inferior -->
                 <input type="checkbox" id="backstage">
                 <label for="backstage">Backstage</label>
+                <span class="price">R$ 400,00</span>
             </div>
-            <div class="legend-item">
+            <div class="Legendas" style="margin-bottom: 50px;"> <!-- Aumentei a margem inferior -->
                 <input type="checkbox" id="on-stage">
                 <label for="on-stage">On Stage</label>
+                <span class="price">R$ 500,00</span>
             </div>
         </div>
-        <button class="next-button">Próximo</button>
+        <button class="next-button">Próximo</button> <!-- Botão para avançar -->
     </div>
 </body>
 </html>
