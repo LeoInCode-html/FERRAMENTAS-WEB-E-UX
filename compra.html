@@ -46,7 +46,19 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             cursor: pointer;
+            transition: background-color 0.3s ease;
         }
+
+        .reserve-button:hover {
+            background-color: #84e5e9;
+            border-color: #000000;
+        }
+
+        .reserve-button.selected {
+            background-color: #919696; /* Cor quando selecionado */
+            border-color: #000000;
+        }
+
         .next-button {
             background-color: #f0f0f0;
             padding: 10px 20px;
@@ -90,6 +102,21 @@
 
         <button class="next-button">Próximo</button>
     </div>
+
+    <script>
+        // Adicionar funcionalidade de seleção ao clicar no botão de reserva
+        document.querySelectorAll('.reserve-button').forEach(button => {
+            button.addEventListener('click', function() {
+                // Se o botão já está selecionado, remove a seleção
+                if (this.classList.contains('selected')) {
+                    this.classList.remove('selected');
+                } else {
+                    // Adicionar a classe 'selected' ao botão clicado
+                    this.classList.add('selected');
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
