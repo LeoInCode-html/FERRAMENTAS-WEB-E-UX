@@ -1,100 +1,95 @@
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #000;
-    color: #fff;
-    text-align: center;
+    margin: 0; /* Remove margens padrão do body */
+    font-family: Arial, sans-serif; /* Define a fonte principal da página */
+    background-color: #000; /* Define o fundo preto */
+    color: #fff; /* Define a cor do texto branco */
+    text-align: center; /* Centraliza o texto no corpo da página */
 }
 
 h1 {
-    font-size: 2.5em;
-    margin-top: 20px;
-    text-align: center;
-    color: #fff;
+    font-size: 2.5em; /* Define o tamanho da fonte do título principal */
+    margin-top: 20px; /* Adiciona espaçamento no topo do título */
+    text-align: center; /* Centraliza o título */
+    color: #fff; /* Define a cor do texto do título como branco */
 }
 
 .container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
+    width: 80%; /* Define a largura do contêiner principal em 80% da tela */
+    margin: 0 auto; /* Centraliza o contêiner */
+    padding: 20px; /* Adiciona espaçamento interno */
 }
 
 .image-main {
-    width: 100%;
-    max-width: 700px;
-    border-radius: 10px;
+    width: 100%; /* Define a largura da imagem principal para ocupar todo o espaço disponível */
+    max-width: 700px; /* Define um limite máximo de largura para a imagem */
+    border-radius: 10px; /* Arredonda os cantos da imagem */
 }
 
 .content {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-    text-align: left;
+    display: flex; /* Organiza o conteúdo em um layout flexível */
+    justify-content: space-between; /* Espaça os itens igualmente */
+    margin-top: 20px; /* Adiciona espaçamento superior */
+    text-align: left; /* Alinha o texto à esquerda */
 }
 
 .box {
-    text-align: center;  
-    width: 48%;
-    /*background-color: #222;*/
-    padding: 0.10%;
-    border-radius: 10px;
+    text-align: center;  /* Centraliza o texto dentro das caixas */
+    width: 48%; /* Define a largura de cada caixa como 48% */
+    padding: 0.10%; /* Define um pequeno preenchimento nas caixas */
+    border-radius: 10px; /* Arredonda os cantos das caixas */
 }
 
 .image-small {
-    width: 100%;
-    border-radius: 10px;
+    width: 100%; /* Faz com que a imagem dentro da caixa ocupe toda a largura */
+    border-radius: 10px; /* Arredonda os cantos da imagem */
 }
 
 .buttons {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+    display: flex; /* Cria um layout flexível para os botões */
+    justify-content: center; /* Centraliza os botões no contêiner */
+    margin-top: 20px; /* Adiciona espaçamento superior */
 }
 
 .button {
-    padding: 10px 20px;
-    background-color: #fff;
-    color: #000;
-    text-transform: uppercase;
-    font-weight: bold;
-    margin-right: 30px; margin-left: 30px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-    grid-template-columns: repeat(2, 1fr); 
+    padding: 10px 20px; /* Adiciona espaçamento interno aos botões */
+    background-color: #fff; /* Define a cor de fundo branca para os botões */
+    color: #000; /* Define a cor do texto como preto */
+    text-transform: uppercase; /* Transforma o texto dos botões em maiúsculas */
+    font-weight: bold; /* Deixa o texto em negrito */
+    margin-right: 30px; margin-left: 30px; /* Adiciona espaçamento nas laterais dos botões */
+    border: none; /* Remove as bordas dos botões */
+    border-radius: 5px; /* Arredonda os cantos dos botões */
+    cursor: pointer; /* Adiciona o cursor de mão ao passar sobre os botões */
+    width: 100%; /* Faz com que os botões ocupem toda a largura disponível */
+    grid-template-columns: repeat(2, 1fr); /* Define a estrutura de grid dos botões */
 }
 
 .button:hover {
-    background-color: #444;
-    color: #fff;
+    background-color: #444; /* Muda a cor de fundo ao passar o mouse */
+    color: #fff; /* Muda a cor do texto ao passar o mouse */
 }
 
 @media (max-width: 768px) {
     .content {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column; /* Em telas menores, os elementos são dispostos em coluna */
+        align-items: center; /* Centraliza os elementos */
     }
 
     .box {
-        width: 100%;
-        margin-bottom: 20px;
+        width: 100%; /* Faz com que cada caixa ocupe toda a largura disponível */
+        margin-bottom: 20px; /* Adiciona espaçamento inferior entre as caixas */
     }
-
-
 }
 
-.img-poster{
-    width: 1079px;
-    height: 808px;
-    padding: 0.2%;
-  }
+.img-poster {
+    width: 1079px; /* Define a largura da imagem poster */
+    height: 808px; /* Define a altura da imagem poster */
+    padding: 0.2%; /* Adiciona preenchimento à imagem */
+}
 
-  .paragrafo{
-    /*width: 200px;
-    height: 200px;*/
-    background-color: black;
-    border: 1px solid white;
-  }
+.paragrafo {
+    background-color: black; /* Define o fundo preto para o parágrafo */
+    border: 1px solid white; /* Adiciona uma borda branca ao redor do parágrafo */
+}
 
   
