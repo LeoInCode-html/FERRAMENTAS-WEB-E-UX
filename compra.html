@@ -85,6 +85,18 @@
             float: right; /* Posiciona o botão à direita */
             margin-right: 335px; /* Margem à direita para alinhamento */
         }
+
+        /* Estilo do botão "Voltar para a Página Principal" */
+        .back-button {
+            background-color: #f0f0f0; /* Cor de fundo */
+            padding: 10px 20px; /* Espaçamento interno */
+            border: none; /* Sem bordas */
+            border-radius: 5px; /* Bordas arredondadas */
+            cursor: pointer; /* Cursor de clique */
+            margin-top: 20px; /* Espaço acima do botão */
+            float: left; /* Posiciona o botão à esquerda */
+            margin-left: 335px; /* Margem à esquerda para alinhamento */
+        }
     </style>
 </head>
 <body>
@@ -120,8 +132,9 @@
             <button class="reserve-button">Reservar</button>
         </div>
 
-        <!-- Botão para avançar para a próxima etapa -->
-        <button class="next-button">Próximo</button>
+        <!-- Botões para voltar à página principal e avançar para a próxima etapa -->
+        <button class="back-button" onclick="window.location.href='PaginaPrincipal.html'">Voltar para a Página Principal</button>
+        <button class="next-button">Reservar Local no estadio</button>
     </div>
 
     <script>
