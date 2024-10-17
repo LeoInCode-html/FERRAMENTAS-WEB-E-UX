@@ -4,11 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biografia</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link para o arquivo de estilo externo -->
 </head>
+
+<style>
+
+body {
+    margin: 0; /* Remove margens padrão do body */
+    font-family: Arial, sans-serif; /* Define a fonte principal da página */
+    background-color: #000; /* Define o fundo preto */
+    color: #fff; /* Define a cor do texto branco */
+    text-align: center; /* Centraliza o texto no corpo da página */
+}
+
+
+  /* Estilos adicionais para o botão */
+        /* Estilos adicionais para o botão */
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #f0f0f0; /* Cor de fundo do botão */
+            color: #000; /* Cor do texto */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px; /* Espaçamento acima do botão */
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .back-button:hover {
+            background-color: #ccc; /* Cor de fundo ao passar o mouse */
+        }
+
+        /* Centraliza o botão na página */
+        .container {
+            text-align: center;
+        }
+
+        /* Estilo para o título "Biografia das Sombras" */
+        .main-title {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .container {
+    width: 80%; /* Define a largura do contêiner principal em 80% da tela */
+    margin: 0 auto; /* Centraliza o contêiner */
+    padding: 20px; /* Adiciona espaçamento interno */
+}
+h1 {
+    font-size: 2.5em; /* Define o tamanho da fonte do título principal */
+    margin-top: 20px; /* Adiciona espaçamento no topo do título */
+    text-align: center; /* Centraliza o título */
+    color: #fff; /* Define a cor do texto do título como branco */
+}
+
+
+</style>
 <body>
     <div class="container"> <!-- Contêiner principal que agrupa todo o conteúdo -->
-        
+
+        <!-- Título principal "Biografia das Sombras" -->
+        <h1 class="main-title">Biografia das Sombras</h1>
+
         <!-- Seção da imagem da banda -->
         <div class="band-image">
             <img src="static/imgs/band.svg" alt="Foto da Banda"> <!-- Imagem da banda -->
@@ -33,6 +92,10 @@
             <!-- Conclusão com as ambições futuras da banda -->
             <p>A banda segue com ambições autênticas e ambições de deixar sua marca no cenário nacional e internacional. Sombras do Amanhã está pronta para levar seu som além das nossas imaginações, prometendo novos lançamentos e experiências sonoras para o futuro.</p>
         </div>
+
+        <!-- Botão para voltar à página principal -->
+        <button class="back-button" onclick="window.location.href='PaginaPrincipal.html'">Voltar para a Página Principal</button>
     </div>
 </body>
 </html>
+
