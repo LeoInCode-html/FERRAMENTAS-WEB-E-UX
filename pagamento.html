@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento</title>
+    <style>
+        body {
+      background-image: url('static/imgs/Imagem\ fundo.svg');
+      background-size: cover; 
+      background-position: center; 
+      background-repeat: no-repeat;
+      }
+    </style>
+</head>
+<body>
+    <main>
+                <form action="/action_page.php">
+                    <label for="fname">Nome completo</label><br>
+                    <input type="text" id="name" name="name" placeholder="Informe seu nome completo"><br>
+                    <label for="lname">Número do cartão</label><br>
+                    <input type="text" id="ncartao" name="ncartao" placeholder="Informe os números do cartão"><br>
+                    <label for="codsegurança">Código de segurança</label><br>
+                    <input type="text" id="codsegurança" name="codsegurança" placeholder="mm/aaaa"><br>
+                    <label for="email">Email</label><br>
+                    <input type="text" id="email" name="email" placeholder="exemplo@exemplo.com"><br>
+                    <label for="vtotal">Valor total</label><br>
+                    <input type="text" id="valor" name="valor"><br><br>
+                    <input type="submit" value="Finalizar compra">
+                  </form>
+    </main>
+</body>
+</html>
