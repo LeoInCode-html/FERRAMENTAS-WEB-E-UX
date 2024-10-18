@@ -4,157 +4,239 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sombras do Amanhã</title>
-    
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+        }
+
+        /* Estilos do cabeçalho */
+        header {
+            background-color: #000;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        header nav a {
+            color: #fff;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: bold;
+            letter-spacing: 2px;
+            font-size: 1em;
+            transition: color 0.3s;
+        }
+
+        header nav a:hover {
+            color: #ddd;
+        }
+
+        .logo {
+            font-size: 2em;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            font-family: 'Arial Black', sans-serif;
+            font-size: 1.2em;
+        }
+
+        /* Estilos dos álbuns */
+        .album {
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .album h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.5);
+        }
+
+        .release-date {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            color: #ddd;
+        }
+
+        .description {
+            font-size: 0.9em;
+            margin-bottom: 20px;
+            color: #ccc;
+        }
+
+        .find-out-more {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #fff;
+            color: #000;
+            text-transform: uppercase;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .find-out-more:hover {
+            background-color: #444;
+            color: #fff;
+        }
+
+        .album-container {
+            background-image: url('static/imgs/band.svg');
+            background-size: contain;
+            background-position: center;
+            padding: 40px 20px;
+            position: relative;
+            border-bottom: 5px solid #fff;
+            height: 400px;
+        }
+
+        .album-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .album-info {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #000;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.8em;
+            position: relative;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            display: inline-block;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #aaa;
+        }
+
+        footer .social-icons {
+            margin: 20px 0;
+        }
+
+        footer .social-icons a {
+            margin: 0 10px;
+            font-size: 1.5em;
+        }
+
+        footer .social-icons a i {
+            color: #fff;
+        }
+
+        .back-to-top {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 0.8em;
+        }
+
+    </style>
 </head>
-<style>
-body {
-    margin: 0; /* Remove margens padrão do body */
-    font-family: Arial, sans-serif; /* Define a fonte principal da página */
-    background-color: #000; /* Define o fundo preto */
-    color: #fff; /* Define a cor do texto branco */
-    text-align: center; /* Centraliza o texto no corpo da página */
-}
-
-h1 {
-    font-size: 2.5em; /* Define o tamanho da fonte do título principal */
-    margin-top: 20px; /* Adiciona espaçamento no topo do título */
-    text-align: center; /* Centraliza o título */
-    color: #fff; /* Define a cor do texto do título como branco */
-}
-
-.container {
-    width: 80%; /* Define a largura do contêiner principal em 80% da tela */
-    margin: 0 auto; /* Centraliza o contêiner */
-    padding: 20px; /* Adiciona espaçamento interno */
-}
-
-.image-main {
-    width: 100%; /* Define a largura da imagem principal para ocupar todo o espaço disponível */
-    max-width: 700px; /* Define um limite máximo de largura para a imagem */
-    border-radius: 10px; /* Arredonda os cantos da imagem */
-}
-
-.content {
-    display: flex; /* Organiza o conteúdo em um layout flexível */
-    justify-content: space-between; /* Espaça os itens igualmente */
-    margin-top: 20px; /* Adiciona espaçamento superior */
-    text-align: left; /* Alinha o texto à esquerda */
-}
-
-.box {
-    text-align: center;  /* Centraliza o texto dentro das caixas */
-    width: 48%; /* Define a largura de cada caixa como 48% */
-    padding: 0.10%; /* Define um pequeno preenchimento nas caixas */
-    border-radius: 10px; /* Arredonda os cantos das caixas */
-}
-
-.image-small {
-    width: 100%; /* Faz com que a imagem dentro da caixa ocupe toda a largura */
-    border-radius: 10px; /* Arredonda os cantos da imagem */
-}
-
-.buttons {
-    display: flex; /* Cria um layout flexível para os botões */
-    justify-content: center; /* Centraliza os botões no contêiner */
-    margin-top: 20px; /* Adiciona espaçamento superior */
-}
-
-.button {
-    padding: 10px 20px; /* Adiciona espaçamento interno aos botões */
-    background-color: #fff; /* Define a cor de fundo branca para os botões */
-    color: #000; /* Define a cor do texto como preto */
-    text-transform: uppercase; /* Transforma o texto dos botões em maiúsculas */
-    font-weight: bold; /* Deixa o texto em negrito */
-    margin-right: 30px; margin-left: 30px; /* Adiciona espaçamento nas laterais dos botões */
-    border: none; /* Remove as bordas dos botões */
-    border-radius: 5px; /* Arredonda os cantos dos botões */
-    cursor: pointer; /* Adiciona o cursor de mão ao passar sobre os botões */
-    width: 100%; /* Faz com que os botões ocupem toda a largura disponível */
-    grid-template-columns: repeat(2, 1fr); /* Define a estrutura de grid dos botões */
-}
-
-.button:hover {
-    background-color: #444; /* Muda a cor de fundo ao passar o mouse */
-    color: #fff; /* Muda a cor do texto ao passar o mouse */
-}
-
-@media (max-width: 768px) {
-    .content {
-        flex-direction: column; /* Em telas menores, os elementos são dispostos em coluna */
-        align-items: center; /* Centraliza os elementos */
-    }
-
-    .box {
-        width: 100%; /* Faz com que cada caixa ocupe toda a largura disponível */
-        margin-bottom: 20px; /* Adiciona espaçamento inferior entre as caixas */
-    }
-}
-
-.img-poster {
-    width: 1079px; /* Define a largura da imagem poster */
-    height: 808px; /* Define a altura da imagem poster */
-    padding: 0.2%; /* Adiciona preenchimento à imagem */
-}
-
-.paragrafo {
-    background-color: black; /* Define o fundo preto para o parágrafo */
-    border: 1px solid white; /* Adiciona uma borda branca ao redor do parágrafo */
-}
-
-
-
-
-</style>
-
 <body>
+    <!-- Cabeçalho (Header) -->
+    <header>
+        <nav>
+            <a href="#">Música</a>
+            <a href="#">Banda</a>
+            <a href="#">Tour</a>
+            <div class="logo">Sombras do Amanhã</div>
+            <a href="#">Loja</a>
+            <a href="#">Jornal</a>
+            <a href="#">Newsletter</a>
+        </nav>
+    </header>
 
-    <!-- Título principal da página -->
-    <h1>Sombras do Amanhã</h1>
-
-    <!-- Contêiner principal que agrupa a imagem do álbum, texto e botões -->
-    <div class="container">
-        <!-- Imagem do álbum da banda -->
-        <img src="static/imgs/album.svg" class="img-poster" alt="Foto da Banda">
-        
-        <!-- Seção que contém o conteúdo textual e a segunda imagem -->
-        <div class="content">
-
-            <!-- Bloco de texto com informações sobre o EP e a banda -->
-            <div class="box text-sm-left text-md-center text-lg-right paragrafo">
-                <!-- Parágrafo descrevendo o EP da banda e seu estilo musical -->
-                <p>Desde o lançamento do seu EP de estreia, <strong> Reflexos da Escuridão, Sombras do Amanhã </strong> tem consolidado sua posição na cena alternativa com um som que vai além das fronteiras convencionais do rock. As cinco faixas do EP mergulham em temas existenciais, explorando o isolamento, a busca por significado e as sombras psicológicas que acompanham a vida urbana moderna. A profundidade das letras, combinada com arranjos sonoros atmosféricos e distorções hipnóticas, faz com que cada faixa seja uma viagem emocional.</p>
-
-                <!-- Outro parágrafo descrevendo o reconhecimento da crítica e os festivais onde a banda se apresentou -->
-                <p>O reconhecimento da crítica veio rapidamente, com jornalistas e blogs especializados elogiando a habilidade da banda em mesclar melodia e caos, criando uma sonoridade ao mesmo tempo envolvente e inquietante. Além disso, a banda se destacou em importantes festivais independentes, como o <strong>Indie Spirit Fest</strong> e o <strong>Noites Urbanas</strong>, onde suas performances intensas e autênticas conquistaram o público.</p>
-                    
-                <!-- Parágrafo descrevendo a performance ao vivo da banda e sua interação com o público -->
-                <p>Com shows ao vivo, <strong>Sombras do Amanhã</strong> cria uma experiência imersiva que vai além da música. Combinando luzes sincronizadas, projeções visuais e uma presença de palco magnética, eles envolvem a audiência em uma atmosfera cinematográfica. O vocalista entrega cada verso com uma carga emocional palpável, enquanto o instrumental dinâmico constrói camadas de som que oscilam entre momentos de introspecção suave e explosões de energia.</p>
-            </div>
-
-            <!-- Segunda seção contendo uma imagem e mais texto -->
-            <div class="box text-sm-left text-md-center text-lg-right align-items-center">
-                <!-- Imagem da banda com classe para fluidificar a imagem -->
-                <div>
-                    <img src="static/imgs/close_da_banda.svg" class="img-fluid d-block mx-auto" alt="Foto da Banda">
-                </div>
-
-                <!-- Parágrafo adicional sobre o futuro da banda e o álbum que está sendo desenvolvido -->
-                <div class="paragrafo">
-                    <p>Com novas músicas sendo desenvolvidas, a banda planeja lançar um álbum completo em breve, prometendo expandir ainda mais sua sonoridade e explorar novas vertentes criativas. <strong>Sombras do Amanhã</strong> está no caminho certo para se tornar um nome de referência no cenário do rock alternativo nacional.</p>
-                </div>
-            
-            </div>
-        </div>
-
-        <!-- Seção de botões -->
-        <div class="buttons d-flex justify-content-between">
-            <!-- Link para a página de compra com botão estilizado como primário -->
-            <a href="Locais.html" style="text-decoration: none;" class="button btn btn-primary btn-block">Compra</a>
-            <!-- Link para a biografia da banda com botão secundário -->
-            <a class="button btn btn-secondary btn-block" href="bio.html" style="text-decoration: none;">Biografia</a>
+    <!-- Primeiro álbum -->
+    <div class="album-container">
+        <div class="album-info">
+            <h1>Reflexos da Escuridão</h1>
+            <p class="release-date">DATA DE LANÇAMENTO: 10 de Março de 2023</p>
+            <p class="description">O EP de estreia da banda "Sombras do Amanhã". Um mix de rock alternativo com letras profundas e atmosféricas.</p>
+            <a href="#" class="find-out-more">Saiba mais</a>
         </div>
     </div>
 
+    <!-- Segundo álbum -->
+    <div class="album-container">
+        <div class="album-info">
+            <h1>Próximo Lançamento</h1>
+            <p class="release-date">DATA DE LANÇAMENTO: 15 de Junho de 2024</p>
+            <p class="description">Um novo álbum com faixas que exploram temas como ansiedade e distopia, prometendo uma experiência única.</p>
+            <a href="#" class="find-out-more">Saiba mais</a>
+        </div>
+    </div>
+
+    <!-- Terceiro álbum -->
+    <div class="album-container">
+        <div class="album-info">
+            <h1>Sussurros da Noite</h1>
+            <p class="release-date">DATA DE LANÇAMENTO: 20 de Novembro de 2024</p>
+            <p class="description">O segundo EP da banda, apresentando novas sonoridades e letras introspectivas.</p>
+            <a href="#" class="find-out-more">Saiba mais</a>
+        </div>
+    </div>
+
+    <!-- Quarto álbum -->
+    <div class="album-container">
+        <div class="album-info">
+            <h1>Nos Ecos do Futuro</h1>
+            <p class="release-date">DATA DE LANÇAMENTO: 5 de Fevereiro de 2025</p>
+            <p class="description">Um álbum conceitual que explora as esperanças e medos da juventude moderna.</p>
+            <a href="#" class="find-out-more">Saiba mais</a>
+        </div>
+    </div>
+
+    <!-- Rodapé (Footer) -->
+    <footer>
+        <div class="back-to-top">
+            <a href="#">Back to top ↑</a>
+        </div>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-pinterest"></i></a>
+            <a href="#"><i class="fab fa-spotify"></i></a>
+            <a href="#"><i class="fab fa-soundcloud"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div>© 2024 Catolica Ltd</div>
+        <div><a href="#">Privacy & Cookie Policy</a></div>
+    </footer>
 </body>
 </html>
 
