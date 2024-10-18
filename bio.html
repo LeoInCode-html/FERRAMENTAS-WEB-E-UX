@@ -3,99 +3,252 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biografia</title>
-</head>
-
-<style>
-
-body {
-    margin: 0; /* Remove margens padrão do body */
-    font-family: Arial, sans-serif; /* Define a fonte principal da página */
-    background-color: #000; /* Define o fundo preto */
-    color: #fff; /* Define a cor do texto branco */
-    text-align: center; /* Centraliza o texto no corpo da página */
-}
-
-
-  /* Estilos adicionais para o botão */
-        /* Estilos adicionais para o botão */
-        .back-button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #f0f0f0; /* Cor de fundo do botão */
-            color: #000; /* Cor do texto */
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 20px; /* Espaçamento acima do botão */
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-
-        .back-button:hover {
-            background-color: #ccc; /* Cor de fundo ao passar o mouse */
-        }
-
-        /* Centraliza o botão na página */
-        .container {
+    <title>Banda - Sombras do Amanhã</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
             text-align: center;
         }
 
-        /* Estilo para o título "Biografia das Sombras" */
-        .main-title {
+        /* Estilos do cabeçalho */
+        header {
+            background-color: #000;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        header nav a {
+            color: #fff;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: bold;
+            letter-spacing: 2px;
+            font-size: 1em;
+            transition: color 0.3s;
+        }
+
+        header nav a:hover {
+            color: #ddd;
+        }
+
+        .logo {
+            font-size: 2em;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            font-family: 'Arial Black', sans-serif;
+            font-size: 1.2em;
+        }
+
+        /* Container styling */
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h1 {
             font-size: 2.5em;
-            margin-bottom: 20px;
+            text-transform: uppercase;
+            margin-top: 20px;
             color: #fff;
         }
 
-        .container {
-    width: 80%; /* Define a largura do contêiner principal em 80% da tela */
-    margin: 0 auto; /* Centraliza o contêiner */
-    padding: 20px; /* Adiciona espaçamento interno */
-}
-h1 {
-    font-size: 2.5em; /* Define o tamanho da fonte do título principal */
-    margin-top: 20px; /* Adiciona espaçamento no topo do título */
-    text-align: center; /* Centraliza o título */
-    color: #fff; /* Define a cor do texto do título como branco */
-}
+        /* Banda section styling */
+        .member {
+            display: flex;
+            justify-content: space-between;
+            margin: 50px 0;
+            align-items: center;
+        }
 
+        .member img {
+            width: 45%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
 
-</style>
+        .member-content {
+            width: 50%;
+            text-align: left;
+            color: #fff;
+        }
+
+        .member-content h2 {
+            font-size: 2em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .member-content p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border-radius: 50%;
+            font-size: 1.5em;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .social-icons a:hover {
+            background-color: #666;
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #000;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.8em;
+            position: relative;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            display: inline-block;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #aaa;
+        }
+
+        footer .social-icons {
+            margin: 20px 0;
+        }
+
+        footer .social-icons a {
+            margin: 0 10px;
+            font-size: 1.5em;
+        }
+
+        footer .social-icons a i {
+            color: #fff;
+        }
+
+        .back-to-top {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
 <body>
-    <div class="container"> <!-- Contêiner principal que agrupa todo o conteúdo -->
 
-        <!-- Título principal "Biografia das Sombras" -->
-        <h1 class="main-title">Biografia das Sombras</h1>
+    <!-- Cabeçalho (Header) -->
+    <header>
+        <nav>
+            <a href="music.html">Música</a>
+            <a href="bio.html">Banda</a>
+            <a href="tour.html">Tour</a>
+            <div class="logo">Sombras do Amanhã</div>
+            <a href="shop.html">Loja</a>
+            <a href="journal.html">Jornal</a>
+            <a href="#">Newsletter</a>
+        </nav>
+    </header>
 
-        <!-- Seção da imagem da banda -->
-        <div class="band-image">
-            <img src="static/imgs/band.svg" alt="Foto da Banda"> <!-- Imagem da banda -->
+    <!-- Conteúdo da Banda -->
+    <div class="container">
+       
+        <!-- Primeiro membro da banda -->
+        <div class="member">
+            <img src="static/imgs/membro1.jpg" alt="Imagem do membro 1">
+            <div class="member-content">
+                <h2>Lucas</h2>
+                <p>Lucas é o vocalista e líder da banda. Suas letras profundas e emotivas são a marca registrada das músicas da Sombras do Amanhã. Ele se inspira em temas como introspecção, ansiedade e superação.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
         </div>
 
-        <!-- Seção do texto biográfico -->
-        <div class="bio-text">
-            <h1>Sombras do Amanhã</h1> <!-- Título principal -->
-
-            <!-- Parágrafo que descreve o estilo musical e formação da banda -->
-            <p>Sombras do Amanhã é uma banda brasileira de rock alternativo formada em 2023. Misturando influências do pós-punk, indie e rock experimental, o grupo busca criar uma atmosfera sombria e introspectiva em suas composições, refletindo os dilemas e inquietações da sociedade contemporânea.</p>
-
-            <!-- Parágrafo que detalha os temas abordados nas letras e o impacto da música da banda -->
-            <p>Com letras profundas que abordam temas como ansiedade, distopia e a busca por sentido em um mundo cada vez mais caótico, Sombras do Amanhã rapidamente conquistou uma base de fãs apaixonada pelo seu som único e envolvente. O instrumental da banda é caracterizado por guitarras atmosféricas, baixos marcantes e batidas hipnóticas, criando uma sonoridade que transporta o ouvinte para paisagens urbanas cinzentas e solitárias.</p>
-
-            <!-- Explicação sobre a formação da banda e a origem de seus integrantes -->
-            <p>Formada por quatro integrantes — dois amigos de infância e dois músicos que se juntaram ao grupo — após tocarem em diferentes projetos de cena independente — a banda tem como pilares a amizade, a criatividade coletiva e a paixão por explorar novas fronteiras musicais.</p>
-
-            <!-- Parágrafo sobre a recepção do EP de estreia e as performances ao vivo -->
-            <p>Desde o lançamento do seu EP de estreia, Reflexos da Escuridão, Sombras do Amanhã tem chamado a atenção da crítica especializada e se destacado entre os melhores da música alternativa. Seus shows ao vivo são conhecidos pela intensidade emocional, criando uma experiência imersiva, com jogos de luzes e atmosferas que acompanham a narrativa de cada canção.</p>
-
-            <!-- Conclusão com as ambições futuras da banda -->
-            <p>A banda segue com ambições autênticas e ambições de deixar sua marca no cenário nacional e internacional. Sombras do Amanhã está pronta para levar seu som além das nossas imaginações, prometendo novos lançamentos e experiências sonoras para o futuro.</p>
+        <!-- Segundo membro da banda -->
+        <div class="member">
+            <div class="member-content">
+                <h2>Gabriel</h2>
+                <p>Gabriel é o guitarrista principal e produtor musical da banda. Ele é responsável por criar as atmosferas sonoras complexas e emocionantes que fazem parte da identidade sonora da banda.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <img src="static/imgs/membro2.jpg" alt="Imagem do membro 2">
         </div>
 
-        <!-- Botão para voltar à página principal -->
-        <button class="back-button" onclick="window.location.href='PaginaPrincipal.html'">Voltar para a Página Principal</button>
+        <!-- Terceiro membro da banda -->
+        <div class="member">
+            <img src="static/imgs/membro3.jpg" alt="Imagem do membro 3">
+            <div class="member-content">
+                <h2>Mariana</h2>
+                <p>Mariana é a baterista, trazendo um estilo rítmico inovador e único. Sua energia no palco é contagiante e ela é a força motriz por trás das batidas que conduzem as músicas da banda.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quarto membro da banda -->
+        <div class="member">
+            <div class="member-content">
+                <h2>Rafael</h2>
+                <p>Rafael é o baixista da banda e co-compositor de várias faixas. Ele traz uma base sólida que equilibra as melodias complexas criadas pelos outros membros.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <img src="static/imgs/membro4.jpg" alt="Imagem do membro 4">
+        </div>
     </div>
+
+    <!-- Rodapé (Footer) -->
+    <footer>
+        <div class="back-to-top">
+            <a href="#">Back to top ↑</a>
+        </div>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-pinterest"></i></a>
+            <a href="#"><i class="fab fa-spotify"></i></a>
+            <a href="#"><i class="fab fa-soundcloud"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div>© 2024 Catolica Ltd</div>
+        <div><a href="#">Privacy & Cookie Policy</a></div>
+    </footer>
+
 </body>
 </html>
-
