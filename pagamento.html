@@ -33,45 +33,91 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra leve para dar profundidade */
         }
 
+        /* Estilo dos rótulos do formulário */
+        label {
+            color: #f9f9f9; /* Cor clara para os textos do formulário */
+        }
+
+        input[type="text"] {
+            width: 120%;
+            padding: 0.4rem;
+            border: 2px solid #000000;
+            outline: none;
+            border-radius: 5px;
+        }
+
+        fieldset {
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid #000000;
+            border-radius: 10px;
+            padding: 1rem 4rem;
+        }
+
+        p {
+            color: #f9f9f9;
+        }
+
+        legend {
+            color: #f9f9f9;
+            padding: 1;
+        }
+
     </style>
 </head>
 <body>
     <main>
         <!-- Formulário de pagamento -->
         <form action="/action_page.php">
-            <!-- Campo de nome completo -->
-            <label for="ncompleto">Nome completo</label><br>
-            <input type="text" id="name" name="name" placeholder="Informe seu nome completo"><br>
-
-            <!-- Campo de e-mail -->
-            <label for="email">Email</label><br>
-            <input type="text" id="email" name="email" placeholder="exemplo@exemplo.com"><br><br>
-
-            <!-- Seção de dados de pagamento -->
-            <p>Dados de Pagamento</p>
-
-            <!-- Campo de CPF -->
-            <label for="cpf">CPF</label><br>
-            <input type="text" id="cpf" name="cpf" placeholder="xxx.xxx.xxx-xx"><br>
-
-            <!-- Campo para número do cartão -->
-            <label for="ncartao">Número do cartão</label><br>
-            <input type="text" id="ncartao" name="ncartao" placeholder="Informe os números do cartão"><br>
-
-            <!-- Campo para data de validade do cartão -->
-            <label for="dvalidade">Data de validade</label><br>
-            <input type="text" id="dvalidade" name="dvalidade" placeholder="mm/aaaa"><br>
-
-            <!-- Campo para código de segurança (CVV) -->
-            <label for="csegurança">Código de segurança</label><br>
-            <input type="text" id="csegurança" name="csegurança" placeholder="Cvv"><br><br> 
-
-            <!-- Campo para o valor total da compra -->
-            <label for="vtotal">Valor total</label><br>
-            <input type="text" id="valor" name="valor"><br><br>
-
-            <!-- Botão para finalizar a compra -->
-            <input type="submit" value="Finalizar compra">
+            <fieldset>
+                <div>
+                <legend>Informações de pagamento</legend>
+                    <!-- Campo de nome completo -->
+                    <label for="ncompleto">Nome completo</label><br>
+                    <input type="text" id="name" name="name" placeholder="Informe seu nome completo"><br>
+                </div>
+                <div>
+                    <!-- Campo de e-mail -->
+                    <label for="email">Email</label><br>
+                    <input type="text" id="email" name="email" placeholder="exemplo@exemplo.com"><br>
+                </div>
+                <div>
+                    <!-- Campo de CPF -->
+                    <label for="cpf">CPF</label><br>
+                    <input type="text" id="cpf" name="cpf" placeholder="xxx.xxx.xxx-xx"><br>
+                </div>
+                <div>
+                    <!-- Campo de Celular -->
+                    <label for="celular">Celular</label><br>
+                    <input type="text" id="celular" name="celular" placeholder="(xx) xxxxx-xxxx"><br>
+                </div>
+                <div>
+                    <!-- Seção de dados de pagamento -->
+                    <p>Dados de Pagamento</p>
+                </div>
+                <div>
+                    <!-- Campo para número do cartão -->
+                    <label for="ncartao">Número do cartão</label><br>
+                    <input type="text" id="ncartao" name="ncartao" placeholder="Informe os números do cartão"><br>
+                </div>
+                <div>
+                    <!-- Campo para data de validade do cartão -->
+                    <label for="dvalidade">Data de validade</label><br>
+                    <input type="text" id="dvalidade" name="dvalidade" placeholder="mm/aaaa"><br>
+                </div>
+                <div>
+                    <!-- Campo para código de segurança (CVV) -->
+                    <label for="csegurança">Código de segurança</label><br>
+                    <input type="text" id="csegurança" name="csegurança" placeholder="Cvv"><br><br> 
+                </div>
+                <div>
+                    <!-- Campo para o valor total da compra -->
+                    <label for="vtotal">Valor total</label><br>
+                    <input type="text" id="valor" name="valor"><br><br>
+                </div>
+                <div>
+                <!-- Botão para finalizar a compra -->
+                <input type="submit" value="Finalizar compra">
+            </fieldset>
         </form>
     </main>
 </body>
