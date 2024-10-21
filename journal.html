@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Similar 2</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: repeat(3, 300px);
+            gap: 0;
+        }
+
+        /* Estilos comuns dos blocos */
+        .block {
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            border: 1px solid #ccc;
+        }
+
+        /* Bloco do Twitter */
+        .block.twitter {
+            background-color: #e0e8f9;
+        }
+
+        .block .date {
+            font-size: 0.8em;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .block .content {
+            font-size: 1.1em;
+            margin-top: 10px;
+        }
+
+        .block a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        /* Estilos de imagem promocional com sobreposição */
+        .block.promo {
+            background-image: url('https://via.placeholder.com/500x500');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .promo .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5em;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        /* Bloco de vídeo */
+        .block.video {
+            position: relative;
+            background-color: #000;
+        }
+
+        .block.video img {
+            width: 100%;
+            height: auto;
+        }
+
+        .block.video .play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3em;
+            color: white;
+            opacity: 0.8;
+        }
+
+        /* Estilos de outros blocos de redes sociais (Instagram, Moment) */
+        .block.instagram, .block.moment {
+            background-color: #f8f8f8;
+        }
+
+        .block.instagram .content, .block.moment .content {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Bloco Instagram -->
+        <div class="block instagram">
+            <div class="date">2nd March 2015</div>
+            <div class="content">INSTAGRAM</div>
+        </div>
+
+        <!-- Bloco Promoção (Four is Out Now) -->
+        <div class="block promo">
+            <div class="overlay">Four is Out Now</div>
+        </div>
+
+        <!-- Bloco Momento -->
+        <div class="block moment">
+            <div class="date">17th November 2014</div>
+            <div class="content">MOMENT</div>
+        </div>
+
+        <!-- Bloco Vídeo (22nd December 2014) -->
+        <div class="block video">
+            <img src="https://via.placeholder.com/500x300" alt="Video Thumbnail">
+            <div class="play-btn">▶</div>
+            <div class="date">22nd December 2014</div>
+        </div>
+
+        <!-- Bloco Twitter (9th March 2015) -->
+        <div class="block twitter">
+            <div class="date">9th March 2015</div>
+            <div class="content">
+                <a href="#">@onedirection</a> Now you see me... now you don’t! #NightChangesOuttakes<br>
+                <a href="#">pic.twitter.com/mdb1pGRWgW</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

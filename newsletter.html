@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sombras do Amanhã - Tour</title>
+    <title>One Direction - Newsletter</title>
     <style>
         body {
-            margin: 0;
             font-family: Arial, sans-serif;
             background-color: #000;
             color: #fff;
+            margin: 0;
             text-align: center;
         }
 
@@ -53,76 +53,109 @@
             font-size: 1.2em;
         }
 
-        /* Estilos da página de turnê */
-        .tour-container {
-            padding: 40px;
-            background-image: url('static/imgs/tour-bg.jpg');
+        /* Estilos da Newsletter */
+        .newsletter-container {
+            padding: 50px;
+            background-image: url('static/imgs/newsletter-bg.jpg');
             background-size: cover;
             background-position: center;
             position: relative;
             overflow: hidden;
+            height: 100vh;
         }
 
-        .tour-container::after {
+        .newsletter-container::after {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.8);
             z-index: 1;
         }
 
-        .tour-content {
+        .newsletter-content {
             position: relative;
             z-index: 2;
         }
 
         h1 {
             font-size: 3em;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             letter-spacing: 2px;
             text-transform: uppercase;
             text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.5);
         }
 
-        .events-section {
-            margin: 30px 0;
+        p {
+            margin-bottom: 30px;
         }
 
-        .events-section h2 {
-            font-size: 2em;
-            margin-bottom: 15px;
-        }
-
-        .events-list {
-            margin: 0 auto;
-            width: 60%;
-            text-align: center;
-            font-size: 1.1em;
-        }
-
-        .event-item {
+        .btn-container {
             display: flex;
-            justify-content: space-around;
-            padding: 10px 0;
-            border-bottom: 1px solid #fff;
+            justify-content: center;
+            gap: 15px;
         }
 
-        .event-date, .event-city, .event-venue {
-            flex: 1;
-            margin: 5px;
-            color: #ddd;
-        }
-
-        .event-date {
-            font-weight: bold;
+        .btn-container button {
+            padding: 10px 20px;
+            background-color: #333;
             color: #fff;
+            border: none;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
 
-        /* Footer styling */
-        footer {
+        .btn-container button:hover {
+            background-color: #555;
+        }
+
+        form {
+            margin-top: 40px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .checkbox-container {
+            font-size: 14px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox-container input {
+            margin-right: 10px;
+        }
+
+        .sign-up-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #555;
+            color: #fff;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .sign-up-btn:hover {
+            background-color: #333;
+        }
+
+ /* Footer styling */
+ footer {
             background-color: #000;
             padding: 20px;
             text-align: center;
@@ -167,7 +200,6 @@
     </style>
 </head>
 <body>
-    <!-- Cabeçalho (Header) -->
     <header>
         <nav>
             <a href="PaginaPrincipal.html">Música</a>
@@ -180,52 +212,32 @@
         </nav>
     </header>
 
-    <!-- Conteúdo da turnê -->
-    <div class="tour-container">
-        <div class="tour-content">
-            <h1>Eventos anteriores</h1>
+    <!-- Conteúdo da Newsletter -->
+    <div class="newsletter-container">
+        <div class="newsletter-content">
+            <h1>Assine a Newsletter</h1>
+            <p>Cadastre-se para receber as últimas novidades das Sombras</p>
 
-            <div class="events-section">
-                <h2>Europa</h2>
-                <div class="events-list">
-                    <div class="event-item">
-                        <span class="event-date">31.10.23</span>
-                        <span class="event-city">Sheffield, GB</span>
-                        <span class="event-venue">Motorpoint Arena</span>
-                    </div>
-                    <div class="event-item">
-                        <span class="event-date">29.10.23</span>
-                        <span class="event-city">Newcastle, GB</span>
-                        <span class="event-venue">Metro Radio Arena</span>
-                    </div>
-                    <div class="event-item">
-                        <span class="event-date">28.10.23</span>
-                        <span class="event-city">Belfast, IE</span>
-                        <span class="event-venue">SSE Arena</span>
-                    </div>
-                </div>
+            <div class="btn-container">
+                <button>Spotify</button>
+                <button>Deezer</button>
+                <button>X</button>
+                <button>YouTube</button>
             </div>
 
-            <div class="events-section">
-                <h2>América do Norte</h2>
-                <div class="events-list">
-                    <div class="event-item">
-                        <span class="event-date">12.09.24</span>
-                        <span class="event-city">Boston, Massachusetts</span>
-                        <span class="event-venue">Gillette Stadium</span>
-                    </div>
-                    <div class="event-item">
-                        <span class="event-date">09.09.24</span>
-                        <span class="event-city">Ottawa, Ontario</span>
-                        <span class="event-venue">Canadian Tire Centre</span>
-                    </div>
-                    <div class="event-item">
-                        <span class="event-date">08.09.24</span>
-                        <span class="event-city">Montreal, Quebec</span>
-                        <span class="event-venue">Olympic Stadium</span>
-                    </div>
+            <form>
+                <input type="email" class="form-input" placeholder="Email Address *" required>
+                <input type="text" class="form-input" placeholder="Country / Region *" required>
+                <input type="date" class="form-input" required>
+                <input type="text" class="form-input" placeholder="First Name">
+
+                <div class="checkbox-container">
+                    <input type="checkbox" required>
+                    <label>Eu concordo com a política de privacidade.</label>
                 </div>
-            </div>
+
+                <button type="submit" class="sign-up-btn">Cadastrar</button>
+            </form>
         </div>
     </div>
 
