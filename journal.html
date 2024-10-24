@@ -3,8 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Similar 2</title>
+    <title>Journal</title>
     <style>
+
+        header {
+            background-color: black;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+        }
+
+        header nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -27,13 +50,16 @@
         }
 
         /* Bloco do Twitter */
-        .block.twitter {
-            background-color: #e0e8f9;
+        .block.X {
+            background-color: black;
+            background-image: url('static/imgs/Imagem\ logotipo.svg');
+            background-size: cover;
+            background-position: center;
         }
 
         .block .date {
             font-size: 0.8em;
-            color: #666;
+            color: #ffffff;
             margin-bottom: 10px;
         }
 
@@ -49,7 +75,7 @@
 
         /* Estilos de imagem promocional com sobreposição */
         .block.promo {
-            background-image: url('https://via.placeholder.com/500x500');
+            background-image: url('static/imgs/Imagem\ fundo.svg');
             background-size: cover;
             background-position: center;
         }
@@ -60,17 +86,25 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(255, 255, 0, 0.6);
+            background-color: rgba(0, 0, 0, 0.6);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 2.5em;
             text-transform: uppercase;
             font-weight: bold;
+            color: white;
+        }
+
+        back-to-top{
+            position: center;
+           
+
+            
         }
 
         /* Bloco de vídeo */
-        .block.video {
+       /* .block.video {
             position: relative;
             background-color: #000;
         }
@@ -80,7 +114,7 @@
             height: auto;
         }
 
-        .block.video .play-btn {
+       /* .block.video .play-btn {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -88,53 +122,71 @@
             font-size: 3em;
             color: white;
             opacity: 0.8;
+        }*/
+        
+     
+        .block.instagram, .Reflexos.da.Escuridão {
+            background-color: #000000;
+            color: #ffffff;
         }
 
-        /* Estilos de outros blocos de redes sociais (Instagram, Moment) */
-        .block.instagram, .block.moment {
-            background-color: #f8f8f8;
-        }
-
-        .block.instagram .content, .block.moment .content {
-            color: #333;
+        .block.instagram .content, .Reflexos.da.Escuridão .content {
+            color: #ffffff;
         }
     </style>
 </head>
 <body>
+    <header>
+        <nav>
+            <a href="PaginaPrincipal.html">Música</a>
+            <a href="bio.html">Banda</a>
+            <a href="tour.html">Tour</a>
+            <a href="shop.html">Loja</a>
+            <a href="journal.html">Jornal</a>
+            <a href="newsletter.html">Newsletter</a>
+        </nav>
+    </header>
     <div class="container">
-        <!-- Bloco Instagram -->
+       
         <div class="block instagram">
-            <div class="date">2nd March 2015</div>
+            <div class="date">10 de Março de 2023</div>
             <div class="content">INSTAGRAM</div>
         </div>
 
-        <!-- Bloco Promoção (Four is Out Now) -->
         <div class="block promo">
-            <div class="overlay">Four is Out Now</div>
+            <div class="overlay">Sussurros da Noite está disponível agora</div>
         </div>
 
-        <!-- Bloco Momento -->
-        <div class="block moment">
-            <div class="date">17th November 2014</div>
-            <div class="content">MOMENT</div>
+        <div class="block Reflexos da Escuridão">
+            <div class="date">10 de Março de 2023</div>
+            <div class="content">REFLEXOS DA ESCURIDÃO</div>
         </div>
 
-        <!-- Bloco Vídeo (22nd December 2014) -->
-        <div class="block video">
-            <img src="https://via.placeholder.com/500x300" alt="Video Thumbnail">
-            <div class="play-btn">▶</div>
-            <div class="date">22nd December 2014</div>
-        </div>
-
-        <!-- Bloco Twitter (9th March 2015) -->
-        <div class="block twitter">
-            <div class="date">9th March 2015</div>
+         <div class="block X">
+            <div class="date">10 de Janeiro de 2023</div>
             <div class="content">
-                <a href="#"></a> Now you see me... now you don’t! #NightChangesOuttakes<br>
-                <a href="#">pic.twitter.com/mdb1pGRWgW</a>
+                <a href="#"></a> @SombrasdoAmanhã #Reflexos da Escuridão<br>
+                <a href="#">pic.X.com/mdb1pGRWgW</a>
             </div>
         </div>
     </div>
 </body>
+
+    <footer>
+        <div class="back-to-top">
+            <a href="#">Back to top ↑</a>
+        </div>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-X"></i></a>
+            <a href="#"><i class="fab fa-pinterest"></i></a>
+            <a href="#"><i class="fab fa-spotify"></i></a>
+            <a href="#"><i class="fab fa-soundcloud"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div>© 2024 Catolica Ltd</div>
+        <div><a href="#">Privacy & Cookie Policy</a></div>
+    </footer>
 </html>
 
