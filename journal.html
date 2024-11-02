@@ -4,138 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Journal</title>
-    <style>
+<style>
 
-        header {
-            background-color: black;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+body {
+    background-color: black;
+   color: white;
+}
 
-        }
-
-        header nav {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        header nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #fff;
-        }
-
-        .container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: repeat(3, 300px);
-            gap: 0;
-        }
-
-        .block {
-            padding: 20px;
-            text-align: center;
-            position: relative;
-            border: 1px solid #ccc;
-        }
-
+</style>
     
-        .block.X {
-            background-color: black;
-            background-image: url('static/imgs/Imagem\ logotipo.svg');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .block .date {
-            font-size: 0.8em;
-            color: #ffffff;
-            margin-bottom: 10px;
-        }
-
-        .block .content {
-            font-size: 1.1em;
-            margin-top: 10px;
-        }
-
-        .block a {
-            color: #007bff;
-            text-decoration: none;
-        }
-
-        /* Estilos de imagem promocional com sobreposição */
-        .block.promo {
-            background-image: url('static/imgs/Imagem\ fundo.svg');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .promo .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.6);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5em;
-            text-transform: uppercase;
-            font-weight: bold;
-            color: white;
-        }
-
-        .back-to-top {
-        footer .back-to-top {
-           
-            text-align: center;
-            margin: 0;
-        }
-
-    }
-
-
-        /* Bloco de vídeo */
-       /* .block.video {
-            position: relative;
-            background-color: #000;
-        }
-
-        .block.video img {
-            width: 100%;
-            height: auto;
-        }
-
-       /* .block.video .play-btn {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 3em;
-            color: white;
-            opacity: 0.8;
-        }*/
-        
-     
-        .block.instagram, .Reflexos.da.Escuridão {
-            background-color: #000000;
-            color: #ffffff;
-        }
-
-        .block.instagram .content, .Reflexos.da.Escuridão .content {
-            color: #ffffff;
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -143,13 +20,14 @@
             <a href="PaginaPrincipal.html">Música</a>
             <a href="bio.html">Banda</a>
             <a href="tour.html">Tour</a>
+            <div class="logo">Sombras do Amanhã</div>
             <a href="shop.html">Loja</a>
             <a href="journal.html">Jornal</a>
             <a href="newsletter.html">Newsletter</a>
         </nav>
     </header>
+    
     <div class="container">
-       
         <div class="block instagram">
             <div class="date">10 de Março de 2023</div>
             <div class="content">INSTAGRAM</div>
@@ -164,7 +42,7 @@
             <div class="content">REFLEXOS DA ESCURIDÃO</div>
         </div>
 
-         <div class="block X">
+        <div class="block X">
             <div class="date">10 de Janeiro de 2023</div>
             <div class="content">
                 <a href="#"></a> @SombrasdoAmanhã #Reflexos da Escuridão<br>
@@ -172,11 +50,10 @@
             </div>
         </div>
     </div>
-</body>
-
+    
     <footer>
         <div class="back-to-top">
-            <a href="#">Back to top ↑</a>
+            <a href="#">Voltar ao topo ↑</a>
         </div>
         <div class="social-icons">
             <a href="#"><i class="fab fa-facebook"></i></a>
@@ -188,7 +65,7 @@
             <a href="#"><i class="fab fa-instagram"></i></a>
         </div>
         <div>© 2024 Catolica Ltd</div>
-        <div><a href="#">Privacy & Cookie Policy</a></div>
+        <div><a href="#">Política de Privacidade e Cookies</a></div>
     </footer>
+</body>
 </html>
-
