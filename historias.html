@@ -73,6 +73,46 @@
             font-size: 0.9em;
         }
 
+        
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            display: inline-block;
+            transition: color 0.3s;
+        }
+
+        footer .social-icons {
+            margin: 50px 0;
+        }
+
+        footer .social-icons a {
+            display: inline-flex;
+            width: 35px;
+            height: 35px;
+            background-color: #333;
+            border-radius: 50%;
+            font-size: 20px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            justify-content: center;
+            align-items: center;
+            margin: 4.5px;
+        }
+
+        .social-icons a i {
+            transition: 00.4s all;
+        }
+
+        .social-icons a:hover > i {
+            transform: scale(1.2) rotate(25deg);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+
     </style>
 </head>
 <body>
@@ -97,6 +137,16 @@
     </main>
 
     <footer>
+        <script src="https://kit.fontawesome.com/90fc9434d0.js" crossorigin="anonymous"></script>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/?locale=pt_BR" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://x.com/?lang=pt-br" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://br.pinterest.com/" target="_blank"><i class="fa-brands fa-pinterest"></i></a>
+                <a href="https://open.spotify.com/intl-pt" target="_blank"><i class="fa-brands fa-spotify"></i></a>
+                <a href="https://soundcloud.com/" target="_blank"><i class="fa-brands fa-soundcloud"></i></i></a>
+                <a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></i></a>
+        </div>
         <div>© 2024 Catolica Ltd</div>
         <div style="color: white"><a href="#" style="color: white">Política de Privacidade e Cookies</a></div>
     </footer>

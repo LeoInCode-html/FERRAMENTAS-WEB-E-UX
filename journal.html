@@ -73,9 +73,9 @@
             transition: transform 0.3s;
         }
 
-       /*5t6  .block:hover {
+        .block:hover {
             transform: scale(1.05);
-        }*/
+        }
 
         .content {
             font-size: 1.5em;
@@ -125,12 +125,13 @@
             text-align: center;
             color: gray;
             font-size: 0.9em;
-        }
+        }   
 
         footer a {
             color: white;
             text-decoration: none;
             margin: 0 10px;
+            display: inline-block;
             font-size: 1.2em;
             transition: color 0.3s;
         }
@@ -163,7 +164,7 @@
             align-items: center;
             margin: 4.5px;
         }
-
+            
         .social-icons a i {
             transition: 00.4s all;
         }
@@ -177,17 +178,14 @@
             gap: 10px;
         }
 
-        a {
-            text-decoration: none;
-            color: white;
+        .back-to-top {
+            footer .back-to-top {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 0.8em;
+            }
         }
-
-        a:visited {
-            text-decoration: none;
-            color: white;
-        }
-
-
     </style>
 </head>
 <body>
@@ -247,6 +245,7 @@
         </div>
         <div>© 2024 Catolica Ltd</div>
         <div><a href="#">Política de Privacidade e Cookies</a></div>
+        <div class="back-to-top"><a href="#">Voltar ao topo ↑</a></div>
     </footer>
 </body>
 </html>
