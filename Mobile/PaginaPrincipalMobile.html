@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sombras do Amanhã</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+        }
+
+       
+       header {
+            background-color: #000;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        header nav a {
+            color: #fff;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: bold;
+            letter-spacing: 2px;
+            font-size: 1em;
+            transition: color 0.3s;
+        }
+
+        header nav a:hover {
+            color: #ddd;
+        }
+
+        .logo {
+            font-size: 2em;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            font-family: 'Arial Black', sans-serif;
+            font-size: 1.2em;
+        }
+
+        /* Estilos dos álbuns */
+        .album {
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .album h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.5);
+        }
+
+        .release-date{
+            font-weight: bold;
+    color: #ffffff; 
+    font-size: 0.8em; 
+    text-shadow: 
+        4px 4px 5px rgba(0, 0, 0, 1),
+        6px 6px 10px rgba(0, 0, 0, 0.9),
+        8px 8px 15px rgba(0, 0, 0, 0.8);
+    padding: 0.5em 1em;
+    display: inline-block; 
+    
+    
+}
+
+.description {
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 1.0em;
+    text-shadow: 
+        4px 4px 5px rgba(0, 0, 0, 1),
+        6px 6px 10px rgba(0, 0, 0, 0.9),
+        8px 8px 15px rgba(0, 0, 0, 0.8);
+    padding: 0.5em 1em;
+}
+
+
+
+
+
+        .find-out-more {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #fff;
+            color: #000;
+            text-transform: uppercase;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .find-out-more:hover {
+            background-color: #444;
+            color: #fff;
+        }
+
+        .album-container1 {
+    background-image: url('static/imgs/fundo11.svg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #000000; 
+    padding: 100px;
+    position: sticky
+    border-bottom: 5px solid #fff;
+    height: 400px;
+}
+
+.album-container2 {
+    background-image: url('static/imgs/fundo22.svg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #000000; 
+    padding: 126px;
+    position: sticky;
+    border-bottom: 5px solid #070606;
+    height: 400px;
+}
+
+
+
+.album-container3 {
+    background-image: url('static/imgs/fundo33.svg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #000000; 
+    padding: 145px;
+    position: sticky;
+    border-bottom: 5px solid #050505;
+    height: 400px;
+}
+
+.album-container4 {
+    background-image: url('static/imgs/fundo44.svg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #000000; 
+    padding: 105px;
+    position: sticky;
+    border-bottom: 5px solid #000000;
+    height: 400px;
+}
+
+
+
+
+        .album-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        
+        
+       
+        .album-info {
+            position: relative;
+            z-index: 2;
+        }
+
+        
+        footer {
+            background-color: #000;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.8em;
+            position: relative;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            display: inline-block;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #aaa;
+        }
+
+        footer .social-icons {
+            margin: 50px 0;
+        }
+
+        footer .social-icons a {
+            display: inline-flex;
+            width: 35px;
+            height: 35px;
+            background-color: #333;
+            border-radius: 50%;
+            font-size: 20px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            justify-content: center;
+            align-items: center;
+            margin: 4.5px;
+        }
+
+        .social-icons a i {
+            transition: 00.4s all;
+        }
+
+        .social-icons a:hover > i {
+            transform: scale(1.2) rotate(25deg);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .back-to-top {
+        footer .back-to-top {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 0.8em;
+        }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho (Header) -->
+    <header>
+        <nav>
+            <a href="PaginaPrincipal.html">Música</a>
+            <a href="bio.html">Banda</a>
+            <a href="tour.html">Tour</a>
+            <div class="logo">Sombras do Amanhã</div>
+            <a href="shop.html">Loja</a>
+            <a href="journal.html">Jornal</a>
+            <a href="newsletter.html">Newsletter</a>
+        </nav>
+    </header>
+
+    <!-- Primeiro álbum -->
+<div class="album-container1">
+    <div class="album-info">
+        <h1>Reflexos da Escuridão</h1>
+        <p class="release-date">DATA DE LANÇAMENTO: 02 de Novembro de 2022</p>
+        <p class="description">O EP de estreia da banda"Sombras do Amanhã"Rock alternativo com letras profundas.</p>
+        <a href="#" class="find-out-more">Saiba mais</a>
+    </div>
+</div>
+
+
+    <!-- Segundo álbum -->
+    <div class="album-container2">
+        <div class="album-info">
+            <h1>Distopia</h1>
+            <p class="release-date">DATA DE LANÇAMENTO: 15 de Junho de 2024</p>
+            <p class="description">Album com faixas com temas como ansiedade e distopia, prometendo uma experiência única.</p>
+            <a href="#" class="find-out-more">Saiba mais</a>
+        </div>
+    </div>
+
+    <!-- Terceiro álbum -->
+    <div class="album-container3">
+        <div class="album-info">
+            <h1>Sussurros da Noite</h1>
+            <p class="release-date">DATA DE LANÇAMENTO: 20 de Novembro de 2024</p>
+            <p class="description">O segundo EP da banda, apresentando novas sonoridades e letras introspectivas.</p>
+            <a href="#" class="find-out-more">Saiba mais</a>
+        </div>                        
+    </div>
+    
+
+    <!-- Quarto álbum -->
+    <div class="album-container4">
+        <div class="album-info">
+            <h1>Nos Ecos do Futuro</h1>
+            <p class="release-date">DATA DE LANÇAMENTO: 5 de Fevereiro de 2025</p>
+            <p class="description">Um álbum conceitual que explora as esperanças e medos da juventude moderna.</p>
+            <a href="#" class="find-out-more">Saiba mais</a>
+        </div>
+    </div>
+
+    <!-- Rodapé (Footer) -->
+    <footer>
+        <div class="back-to-top">
+            <a href="#">Back to top ↑</a>
+        </div>
+        <script src="https://kit.fontawesome.com/90fc9434d0.js" crossorigin="anonymous"></script>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/?locale=pt_BR" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://x.com/?lang=pt-br" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://br.pinterest.com/" target="_blank"><i class="fa-brands fa-pinterest"></i></a>
+                <a href="https://open.spotify.com/intl-pt" target="_blank"><i class="fa-brands fa-spotify"></i></a>
+                <a href="https://soundcloud.com/" target="_blank"><i class="fa-brands fa-soundcloud"></i></i></a>
+                <a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></i></a>
+        </div>
+        <div>© 2024 Catolica Ltd</div>
+        <div><a href="#">Privacy & Cookie Policy</a></div>
+    </footer>
+</body>
+</html>
+

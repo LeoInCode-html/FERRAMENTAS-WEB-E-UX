@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banda - Sombras do Amanhã</title>
+       <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        /* Estilos do cabeçalho */
+        header {
+            background-color: #000;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        header nav a {
+            color: #fff;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: bold;
+            letter-spacing: 2px;
+            font-size: 1em;
+            transition: color 0.3s;
+        }
+
+        header nav a:hover {
+            color: #ddd;
+        }
+
+        .logo {
+            font-size: 2em;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            font-family: 'Arial Black', sans-serif;
+            font-size: 1.2em;
+        }
+
+        /* Container styling */
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            text-transform: uppercase;
+            margin-top: 20px;
+            color: #fff;
+        }
+
+        /* Banda section styling */
+        .member {
+            display: flex;
+            justify-content: space-between;
+            margin: 50px 0;
+            align-items: center;
+        }
+
+        .member img {
+            width: 45%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .member-content {
+            width: 50%;
+            text-align: left;
+            color: #fff;
+        }
+
+        .member-content h2 {
+            font-size: 2em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .member-content p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            width: 26px;
+            height: 26px;
+            background-color: #333;
+            color: #fff;
+            border-radius: 50%;
+            font-size: 15px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .social-icons a:hover {
+            background-color: #666;
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #000;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.8em;
+            position: relative;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            display: inline-block;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #aaa;
+        }
+
+        footer .social-icons {
+            margin: 50px 0;
+        }
+
+        footer .social-icons a {
+            display: inline-flex;
+            width: 35px;
+            height: 35px;
+            background-color: #333;
+            border-radius: 50%;
+            font-size: 20px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            justify-content: center;
+            align-items: center;
+            margin: 4.5px;
+        }
+
+        .social-icons a i {
+            transition: 00.4s all;
+        }
+
+        .social-icons a:hover > i {
+            transform: scale(1.2) rotate(25deg);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .back-to-top {
+            footer .back-to-top {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 0.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho (Header) -->
+    <header>
+        <nav>
+            <a href="PaginaPrincipal.html">Música</a>
+            <a href="bio.html">Banda</a>
+            <a href="tour.html">Tour</a>
+            <div class="logo">Sombras do Amanhã</div>
+            <a href="shop.html">Loja</a>
+            <a href="journal.html">Jornal</a>
+            <a href="newsletter.html">Newsletter</a>
+        </nav>
+    </header>
+
+    <!-- Conteúdo da Banda -->
+    <div class="container">
+       
+        <!-- Primeiro membro da banda -->
+        <div class="member">
+            <img src="static/imgs/vocalista-file-1000x600.svg" alt="Imagem do membro 1">
+            <div class="member-content">
+                <h2>Lucas</h2>
+                <p>Lucas é o vocalista e líder da banda. Suas letras profundas e emotivas são a marca registrada das músicas da Sombras do Amanhã. Ele se inspira em temas como introspecção, ansiedade e superação.</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://x.com/?lang=pt-br" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Segundo membro da banda -->
+        <div class="member">
+            <div class="member-content">
+                <h2>Gabriel</h2>
+                <p>Gabriel é o guitarrista principal e produtor musical da banda. Ele é responsável por criar as atmosferas sonoras complexas e emocionantes que fazem parte da identidade sonora da banda.</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://x.com/?lang=pt-br" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <img src="static/imgs/guitarrista (7).svg" alt="Imagem do membro 2">
+        </div>
+
+        <!-- Terceiro membro da banda -->
+        <div class="member">
+            <img src="static/imgs/baterista.svg" alt="Imagem do membro 3">
+            <div class="member-content">
+                <h2>Eduardo</h2>
+                <p>Eduardo é o baterista, trazendo um estilo rítmo inovador e único. Sua energia no palco é contagiante e ele é a força matriz por trás das batidas que conduzem as músicas da banda.</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://x.com/?lang=pt-br" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quarto membro da banda -->
+        <div class="member">
+            <div class="member-content">
+                <h2>Rafael</h2>
+                <p>Rafael é o baixista da banda e co-compositor de várias faixas. Ele traz uma base sólida que equilibra as melodias complexas criadas pelos outros membros.</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://x.com/?lang=pt-br" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <img src="static/imgs/baixista-image.svg" alt="Imagem do membro 4">
+        </div>
+    </div>
+
+    <!-- Rodapé (Footer) -->
+    <footer>
+        <div class="back-to-top">
+            <a href="#">Back to top ↑</a>
+        </div>
+        <script src="https://kit.fontawesome.com/90fc9434d0.js" crossorigin="anonymous"></script>
+        <div class="social-icons">
+                <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/?locale=pt_BR" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://x.com/?lang=pt-br" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://br.pinterest.com/" target="_blank"><i class="fa-brands fa-pinterest"></i></a>
+                <a href="https://open.spotify.com/intl-pt" target="_blank"><i class="fa-brands fa-spotify"></i></a>
+                <a href="https://soundcloud.com/" target="_blank"><i class="fa-brands fa-soundcloud"></i></i></a>
+                <a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></i></a>
+        </div>
+        <div>© 2024 Catolica Ltd</div>
+        <div><a href="#">Privacy & Cookie Policy</a></div>
+    </footer>
+
+</body>
+</html>
