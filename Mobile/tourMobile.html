@@ -17,41 +17,58 @@
         /* Estilos do cabeçalho */
         header {
             background-color: #000;
-            padding: 20px 0;
+            padding: 20px;
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
-        header nav {
+        .menu-container {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: center;
-        }
-
-        header nav a {
-            color: #fff;
-            text-transform: uppercase;
-            text-decoration: none;
-            font-weight: bold;
-            letter-spacing: 2px;
-            font-size: 1em;
-            transition: color 0.3s;
-        }
-
-        header nav a:hover {
-            color: #ddd;
         }
 
         .logo {
             font-size: 2em;
-            letter-spacing: 3px;
-            text-transform: uppercase;
+            font-weight: bold;
+            color: #fff;
         }
 
-        .logo span {
-            font-family: 'Arial Black', sans-serif;
-            font-size: 1.2em;
+        .menu-btn {
+            background-color: transparent;
+            border: none;
+            color: #fff;
+            font-size: 1.5em;
+            cursor: pointer;
+            display: block;
+        }
+
+        nav {
+            display: none; /* Por padrão, o menu está escondido */
+            flex-direction: column;
+            background-color: #111;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            right: 0;
+            z-index: 999;
+        }
+
+        nav a {
+            color: #fff;
+            padding: 10px;
+            text-decoration: none;
+            text-transform: uppercase;
+            border-bottom: 1px solid #333;
+        }
+
+        nav a:hover {
+            background-color: #222;
+        }
+
+        .menu-active nav {
+            display: flex; /* Mostra o menu ao clicar */
         }
 
         /* Estilos da página de turnê */
@@ -187,16 +204,25 @@
 <body>
     <!-- Cabeçalho (Header) -->
     <header>
-        <nav>
-            <a href="PaginaPrincipal.html">Música</a>
-            <a href="bio.html">Banda</a>
-            <a href="tour.html">Tour</a>
+        <div class="menu-container">
             <div class="logo">Sombras do Amanhã</div>
-            <a href="shop.html">Loja</a>
-            <a href="journal.html">Jornal</a>
-            <a href="newsletter.html">Newsletter</a>
+            <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        </div>
+        <nav id="menu">
+            <a href="PaginaPrincipalMobile.html">Música</a>
+            <a href="bioMobile.html">Banda</a>
+            <a href="tourMobile.html">Tour</a>
+            <a href="shopMobile.html">Loja</a>
+            <a href="journalMobile.html">Jornal</a>
+            <a href="newsletterMobile.html">Newsletter</a>
         </nav>
     </header>
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('header');
+            menu.classList.toggle('menu-active');
+        }
+    </script>
 
     <!-- Conteúdo da turnê -->
     <div class="tour-container">
