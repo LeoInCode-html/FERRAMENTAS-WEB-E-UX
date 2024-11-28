@@ -13,43 +13,60 @@
             text-align: center;
         }
 
-       header {
-            background-color: black;
-            padding: 20px 0;
+        header {
+            background-color: #000;
+            padding: 20px;
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
-        header nav {
+        .menu-container {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: center;
-        }
-
-        header nav a {
-            color: white;
-            text-transform: uppercase;
-            text-decoration: none;
-            font-weight: bold;
-            letter-spacing: 2px;
-            font-size: 1em;
-            transition: color 0.3s;
-        }
-
-        header nav a:hover {
-            color: white;
         }
 
         .logo {
             font-size: 2em;
-            letter-spacing: 3px;
-            text-transform: uppercase;
+            font-weight: bold;
+            color: #fff;
         }
 
-        .logo span {
-            font-family: 'Arial Black', sans-serif;
-            font-size: 1.2em;
+        .menu-btn {
+            background-color: transparent;
+            border: none;
+            color: #fff;
+            font-size: 1.5em;
+            cursor: pointer;
+            display: block;
+        }
+
+        nav {
+            display: none; /* Por padrão, o menu está escondido */
+            flex-direction: column;
+            background-color: #111;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            right: 0;
+            z-index: 999;
+        }
+
+        nav a {
+            color: #fff;
+            padding: 10px;
+            text-decoration: none;
+            text-transform: uppercase;
+            border-bottom: 1px solid #333;
+        }
+
+        nav a:hover {
+            background-color: #222;
+        }
+
+        .menu-active nav {
+            display: flex; /* Mostra o menu ao clicar */
         }
         .container {
             max-width: 1200px;
@@ -73,12 +90,21 @@
             transition: transform 0.3s;
         }
 
-       /*5t6  .block:hover {
+        .block:hover {
             transform: scale(1.05);
-        }*/
+        }
 
-        .content {
-            font-size: 1.5em;
+        .content {                           
+            font-size: 1.2em;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: white;
+            text-align: center;
+        }
+
+        .content-x {                    /*  denis  */
+            font-size: 0.7em;
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 1.5px;
@@ -112,7 +138,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2em;
+            font-size: 1.2em;
             text-transform: uppercase;
             font-weight: bold;
             color: white;
@@ -125,12 +151,13 @@
             text-align: center;
             color: gray;
             font-size: 0.9em;
-        }
+        }   
 
         footer a {
             color: white;
             text-decoration: none;
             margin: 0 10px;
+            display: inline-block;
             font-size: 1.2em;
             transition: color 0.3s;
         }
@@ -163,7 +190,7 @@
             align-items: center;
             margin: 4.5px;
         }
-
+            
         .social-icons a i {
             transition: 00.4s all;
         }
@@ -177,31 +204,37 @@
             gap: 10px;
         }
 
-        a {
-            text-decoration: none;
-            color: white;
+        .back-to-top {
+            footer .back-to-top {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 0.8em;
+            }
         }
-
-        a:visited {
-            text-decoration: none;
-            color: white;
-        }
-
-
     </style>
 </head>
 <body>
     <header>
-        <nav>
-            <a href="PaginaPrincipal.html">Música</a>
-            <a href="bio.html">Banda</a>
-            <a href="tour.html">Tour</a>
+        <div class="menu-container">
             <div class="logo">Sombras do Amanhã</div>
-            <a href="shop.html">Loja</a>
-            <a href="journal.html">Jornal</a>
-            <a href="newsletter.html">Newsletter</a>
+            <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        </div>
+        <nav id="menu">
+            <a href="PaginaPrincipalMobile.html">Música</a>
+            <a href="bioMobile.html">Banda</a>
+            <a href="tourMobile.html">Tour</a>
+            <a href="shopMobile.html">Loja</a>
+            <a href="journalMobile.html">Jornal</a>
+            <a href="newsletterMobile.html">Newsletter</a>
         </nav>
     </header>
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('header');
+            menu.classList.toggle('menu-active');
+        }
+    </script>
     
     <div class="container">
         <div class="block instagram">
@@ -220,14 +253,14 @@
             <div class="date">02 de Novembro de 2022</div>
             
             <div class="content">
-                <a href="historias.html">São mais de 2 anos de História!</a>
+                <a href="historiasMobile.html">São mais de 2 anos de História!</a>
             </div>
             
         </div>
 
         <div class="block">
             <div class="date">10 de Janeiro de 2023</div>
-            <div class="content">
+            <div class="content-x">
                 <a href="#">@SombrasdoAmanhã #Reflexos da Escuridão</a><br>
                 <a href="https://x.com/?lang=pt-br" target="_blank" rel="noopener noreferrer">X</a>
             </div>
@@ -247,6 +280,7 @@
         </div>
         <div>© 2024 Catolica Ltd</div>
         <div><a href="#">Política de Privacidade e Cookies</a></div>
+        <div class="back-to-top"><a href="#">Voltar ao topo ↑</a></div>
     </footer>
 </body>
 </html>

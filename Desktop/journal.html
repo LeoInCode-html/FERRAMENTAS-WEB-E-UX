@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal</title>
+    <style>
+          body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color:black;
+            color: white;
+            text-align: center;
+        }
+
+       header {
+            background-color: black;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        header nav a {
+            color: white;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: bold;
+            letter-spacing: 2px;
+            font-size: 1em;
+            transition: color 0.3s;
+        }
+
+        header nav a:hover {
+            color: white;
+        }
+
+        .logo {
+            font-size: 2em;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            font-family: 'Arial Black', sans-serif;
+            font-size: 1.2em;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            background-color: black;
+            border: 1px solid gray;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .block:hover {
+            transform: scale(1.05);
+        }
+
+        .content {
+            font-size: 1.5em;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: white;
+            text-align: center;
+        }
+
+        .content a {
+            color: white;
+
+        }
+        .date {
+            font-size: 0.8em;
+            color: gray;
+            margin-bottom: 10px;
+        }
+
+        .block.promo {
+            background-image: url('static/imgs/logotipoX.svg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .promo .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+        }
+
+        footer {
+            background-color: black;
+            padding: 20px 0;
+            text-align: center;
+            color: gray;
+            font-size: 0.9em;
+        }   
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            display: inline-block;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        footer .back-to-top a {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+
+        footer .social-icons {
+            margin: 50px 0;
+        }
+
+        footer .social-icons a {
+            display: inline-flex;
+            width: 35px;
+            height: 35px;
+            background-color: #333;
+            border-radius: 50%;
+            font-size: 20px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            justify-content: center;
+            align-items: center;
+            margin: 4.5px;
+        }
+            
+        .social-icons a i {
+            transition: 00.4s all;
+        }
+
+        .social-icons a:hover > i {
+            transform: scale(1.2) rotate(25deg);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .back-to-top {
+            footer .back-to-top {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 0.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="PaginaPrincipal.html">Música</a>
+            <a href="bio.html">Banda</a>
+            <a href="tour.html">Tour</a>
+            <div class="logo">Sombras do Amanhã</div>
+            <a href="shop.html">Loja</a>
+            <a href="journal.html">Jornal</a>
+            <a href="newsletter.html">Newsletter</a>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <div class="block instagram">
+            <a href="https://www.instagram.com" target="_blank">
+                <div class="content">Instagram</div>
+            </a>
+        </div>
+
+        <div class="block promo">
+            <a href="https://www.youtube.com/watch?v=0xyxtzD54rM" target="_blank" rel="noopener noreferrer">
+                <div class="overlay">Sussurros da Noite está disponível agora</div>
+            </a>
+        </div>        
+
+        <div class="block">
+            <div class="date">02 de Novembro de 2022</div>
+            
+            <div class="content">
+                <a href="historias.html">São mais de 2 anos de História!</a>
+            </div>
+            
+        </div>
+
+        <div class="block">
+            <div class="date">10 de Janeiro de 2023</div>
+            <div class="content">
+                <a href="#">@SombrasdoAmanhã #Reflexos da Escuridão</a><br>
+                <a href="https://x.com/?lang=pt-br" target="_blank" rel="noopener noreferrer">X</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <script src="https://kit.fontawesome.com/90fc9434d0.js" crossorigin="anonymous"></script>
+        <div class="social-icons">
+                <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/?locale=pt_BR" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://x.com/?lang=pt-br" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://br.pinterest.com/" target="_blank"><i class="fa-brands fa-pinterest"></i></a>
+                <a href="https://open.spotify.com/intl-pt" target="_blank"><i class="fa-brands fa-spotify"></i></a>
+                <a href="https://soundcloud.com/" target="_blank"><i class="fa-brands fa-soundcloud"></i></i></a>
+                <a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></i></a>
+        </div>
+        <div>© 2024 Catolica Ltd</div>
+        <div><a href="#">Política de Privacidade e Cookies</a></div>
+        <div class="back-to-top"><a href="#">Voltar ao topo ↑</a></div>
+    </footer>
+</body>
+</html>

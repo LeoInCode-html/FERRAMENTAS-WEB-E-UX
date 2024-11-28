@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/90fc9434d0.js" crossorigin="anonymous"></script>
+    <title>Sombras do Amanhã - Tour</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+        }
+
+        /* Estilos do cabeçalho */
+        header {
+            background-color: #000;
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .menu-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2em;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .menu-btn {
+            background-color: transparent;
+            border: none;
+            color: #fff;
+            font-size: 1.5em;
+            cursor: pointer;
+            display: block;
+        }
+
+        nav {
+            display: none; /* Por padrão, o menu está escondido */
+            flex-direction: column;
+            background-color: #111;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            right: 0;
+            z-index: 999;
+        }
+
+        nav a {
+            color: #fff;
+            padding: 10px;
+            text-decoration: none;
+            text-transform: uppercase;
+            border-bottom: 1px solid #333;
+        }
+
+        nav a:hover {
+            background-color: #222;
+        }
+
+        .menu-active nav {
+            display: flex; /* Mostra o menu ao clicar */
+        }
+
+        /* Estilos da página de turnê */
+        .tour-container {
+            padding: 40px;
+            background-image: url('static/imgs/tour-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tour-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+        }
+
+        .tour-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .events-section {
+            margin: 30px 0;
+        }
+
+        .events-section h2 {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+
+        .events-list {
+            margin: 0 auto;
+            width: 60%;
+            text-align: center;
+            font-size: 1.1em;
+        }
+
+        .event-item {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            border-bottom: 1px solid #fff;
+        }
+
+        .event-date, .event-city, .event-venue {
+            flex: 1;
+            margin: 5px;
+            color: #ddd;
+        }
+
+        .event-date {
+            font-weight: bold;
+            color: #fff;
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #000;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.8em;
+            position: relative;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            display: inline-block;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #aaa;
+        }
+
+        footer .social-icons {
+            margin: 50px 0;
+        }
+
+        footer .social-icons a {
+            display: inline-flex;
+            width: 35px;
+            height: 35px;
+            background-color: #333;
+            border-radius: 50%;
+            font-size: 20px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            justify-content: center;
+            align-items: center;
+            margin: 4.5px;
+        }
+
+        .social-icons a i {
+            transition: 00.4s all;
+        }
+
+        .social-icons a:hover > i {
+            transform: scale(1.2) rotate(25deg);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .back-to-top {
+        footer .back-to-top {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 0.8em;
+            }
+        }       
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho (Header) -->
+    <header>
+        <div class="menu-container">
+            <div class="logo">Sombras do Amanhã</div>
+            <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        </div>
+        <nav id="menu">
+            <a href="PaginaPrincipalMobile.html">Música</a>
+            <a href="bioMobile.html">Banda</a>
+            <a href="tourMobile.html">Tour</a>
+            <a href="shopMobile.html">Loja</a>
+            <a href="journalMobile.html">Jornal</a>
+            <a href="newsletterMobile.html">Newsletter</a>
+        </nav>
+    </header>
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('header');
+            menu.classList.toggle('menu-active');
+        }
+    </script>
+
+    <!-- Conteúdo da turnê -->
+    <div class="tour-container">
+        <div class="tour-content">
+            <h1>Eventos anteriores</h1>
+
+            <div class="events-section">
+                <h2>Europa</h2>
+                <div class="events-list">
+                    <div class="event-item">
+                        <span class="event-date">31.10.23</span>
+                        <span class="event-city">Sheffield, GB</span>
+                        <span class="event-venue">Motorpoint Arena</span>
+                    </div>
+                    <div class="event-item">
+                        <span class="event-date">29.10.23</span>
+                        <span class="event-city">Newcastle, GB</span>
+                        <span class="event-venue">Metro Radio Arena</span>
+                    </div>
+                    <div class="event-item">
+                        <span class="event-date">28.10.23</span>
+                        <span class="event-city">Belfast, IE</span>
+                        <span class="event-venue">SSE Arena</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="events-section">
+                <h2>América do Norte</h2>
+                <div class="events-list">
+                    <div class="event-item">
+                        <span class="event-date">12.09.24</span>
+                        <span class="event-city">Boston, Massachusetts</span>
+                        <span class="event-venue">Gillette Stadium</span>
+                    </div>
+                    <div class="event-item">
+                        <span class="event-date">09.09.24</span>
+                        <span class="event-city">Ottawa, Ontario</span>
+                        <span class="event-venue">Canadian Tire Centre</span>
+                    </div>
+                    <div class="event-item">
+                        <span class="event-date">08.09.24</span>
+                        <span class="event-city">Montreal, Quebec</span>
+                        <span class="event-venue">Olympic Stadium</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rodapé (Footer) -->
+    <footer>
+        <div class="back-to-top">
+            <a href="#">Back to top ↑</a>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/?locale=pt_BR" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://x.com/?lang=pt-br" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://br.pinterest.com/" target="_blank"><i class="fa-brands fa-pinterest"></i></a>
+                <a href="https://open.spotify.com/intl-pt" target="_blank"><i class="fa-brands fa-spotify"></i></a>
+                <a href="https://soundcloud.com/" target="_blank"><i class="fa-brands fa-soundcloud"></i></i></a>
+                <a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></i></a>
+        </div>
+        <div>© 2024 Catolica Ltd</div>
+        <div><a href="#">Privacy & Cookie Policy</a></div>
+    </footer>
+</body>
+</html>

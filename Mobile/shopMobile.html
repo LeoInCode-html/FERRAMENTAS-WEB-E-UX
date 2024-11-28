@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Álbum - Merch Store</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1c1c1c; /* Cor de fundo escura */
+            color: #fff; /* Cor de texto branco */
+        }
+
+ /* Estilos do cabeçalho */
+ header {
+            background-color: #000;
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .menu-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2em;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .menu-btn {
+            background-color: transparent;
+            border: none;
+            color: #fff;
+            font-size: 1.5em;
+            cursor: pointer;
+            display: block;
+        }
+
+        nav {
+    display: none; /* Por padrão, o menu está escondido */
+    flex-direction: column;
+    background-color: #111;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    align-items: center; /* Garante alinhamento horizontal dos itens */
+}
+
+nav a {
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-bottom: 1px solid #333;
+    width: 100%; /* Faz os links ocuparem 100% da largura do menu */
+    text-align: center; /* Centraliza o texto dos links */
+    display: block; /* Garante que os links sejam blocos para usar text-align */
+}
+
+nav a:hover {
+    background-color: #222;
+}
+
+.menu-active nav {
+    display: flex; /* Mostra o menu ao clicar */
+}
+
+        /* Banner principal */
+        .banner {
+            background-image: url("static/imgs/banda-img shop.svg"); /* Substitua pela imagem correta */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            padding: 80px 20px;
+            color: #fff;
+            text-align: center;
+        }
+
+
+        .banner::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7); /* Efeito de esmaecimento escuro */
+            z-index: 1;
+        }
+
+        .banner-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .banner h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .banner p {
+            font-size: 1.2em;
+            margin: 20px 0;
+            line-height: 1.5;
+        }
+
+        .banner button {
+            background-color: #f35d3f;
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            text-transform: uppercase;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .banner button:hover {
+            background-color: #c44d35;
+        }
+
+        /* Seção de produtos */
+        .product-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 50px 20px;
+            background-color: #1c1c1c;
+        }
+
+        .product {
+            background-color: #333;
+            width: 300px;
+            margin: 15px;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s;
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .product h3 {
+            font-size: 1.5em;
+            margin: 15px 0;
+            color: #fff;
+        }
+
+        .product p {
+            font-size: 1em;
+            margin: 15px 0;
+            color: #ccc;
+        }
+
+        .product button {
+            background-color: #f35d3f;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .product button:hover {
+            background-color: #c44d35;
+        }
+
+        .product:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #000;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.8em;
+            position: relative;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            display: inline-block;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #aaa;
+        }
+
+        footer .social-icons {
+            margin: 50px 0;
+        }
+
+        footer .social-icons a {
+            display: inline-flex;
+            width: 35px;
+            height: 35px;
+            background-color: #333;
+            border-radius: 50%;
+            font-size: 20px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            justify-content: center;
+            align-items: center;
+            margin: 4.5px;
+        }
+
+        .social-icons a i {
+            transition: 00.4s all;
+        }
+
+        .social-icons a:hover > i {
+            transform: scale(1.2) rotate(25deg);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .back-to-top {
+        footer .back-to-top {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 0.8em;
+        }
+
+    }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="menu-container">
+            <div class="logo">Sombras do Amanhã</div>
+            <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        </div>
+        <nav id="menu">
+            <a href="PaginaPrincipalMobile.html">Música</a>
+            <a href="bioMobile.html">Banda</a>
+            <a href="tourMobile.html">Tour</a>
+            <a href="shopMobile.html">Loja</a>
+            <a href="journalMobile.html">Jornal</a>
+            <a href="newsletterMobile.html">Newsletter</a>
+        </nav>
+    </header>
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('header');
+            menu.classList.toggle('menu-active');
+        }
+    </script>
+
+    <!-- Banner Principal -->
+    <div class="banner">
+        <div class="banner-content">
+            <h3>Made in the A.M.</h3>
+            <p>The new album is out now, including the tracks "Drag Me Down", "End of the Day", "History", and more!</p>
+            <button>Get the Album</button>
+        </div>
+    </div>
+
+    <!-- Seção de Produtos -->
+    <div class="product-section">
+        <!-- Produto 1: Livro -->
+        <div class="product">
+            <img src="static/imgs/livro da banda.svg" alt="Livro Where We Are">
+            <h3>Where We Are</h3>
+            <p>Follow 1D on a journey over the last year and a half - through the highs and lows.</p>
+            <button>Shop Books</button>
+        </div>
+
+        <!-- Produto 2: Merch -->
+        <div class="product">
+            <img src="static/imgs/camiseta.svg" alt="Camiseta Merch">
+            <h3>Merch</h3>
+            <p>Get your exclusive band merch here, with shirts, hoodies, and more!</p>
+            <button>Shop Merch</button>
+        </div>
+        <div class="product">
+            <img src="static/imgs/camiseta-2.svg" alt="Camiseta Merch">
+            <h3>Merch</h3>
+            <p>Get your exclusive band merch here, with shirts, hoodies, and more!</p>
+            <button>Shop Merch</button>
+        </div>
+
+        <!-- Produto 3: Gifts -->
+        <div class="product">
+            <img src="static/imgs/presente da banda.svg" alt="Personalised Gifts">
+            <h3>Personalised Gifts</h3>
+            <p>Find unique personalised gifts for every 1D fan!</p>
+            <button>Shop Gifts</button>
+        </div>
+
+        <!-- Produto 4: Perfume -->
+        <div class="product">
+            <img src="static/imgs/perfume da banda.svg" alt="Perfume Between Us">
+            <h3>Between Us</h3>
+            <p>The official fragrance from 1D - fresh, floral, and unforgettable.</p>
+            <button>Shop Fragrance</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="back-to-top">
+            <a href="#">Back to top ↑</a>
+        </div>
+        <script src="https://kit.fontawesome.com/90fc9434d0.js" crossorigin="anonymous"></script>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/?locale=pt_BR" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://x.com/?lang=pt-br" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://br.pinterest.com/" target="_blank"><i class="fa-brands fa-pinterest"></i></a>
+                <a href="https://open.spotify.com/intl-pt" target="_blank"><i class="fa-brands fa-spotify"></i></a>
+                <a href="https://soundcloud.com/" target="_blank"><i class="fa-brands fa-soundcloud"></i></i></a>
+                <a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></i></a>
+        </div>
+        <div>© 2024 Catolica Ltd</div>
+        <div><a href="#">Privacy & Cookie Policy</a></div>
+    </footer>
+</body>
+</html>
+
+
