@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Journal</title>
     <style>
-          body {
+        body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color:black;
+            background-color: black;
             color: white;
             text-align: center;
         }
 
-       header {
+        header {
             background-color: black;
             padding: 20px 0;
             position: sticky;
@@ -51,6 +51,7 @@
             font-family: 'Arial Black', sans-serif;
             font-size: 1.2em;
         }
+
         .container {
             max-width: 1200px;
             margin: 40px auto;
@@ -86,10 +87,16 @@
             text-align: center;
         }
 
-        .content a {
+        .content1 {
+            font-size: 1.5em;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
             color: white;
-
+            text-align: center;
+            text-decoration: none ! important;
         }
+
         .date {
             font-size: 0.8em;
             color: gray;
@@ -125,7 +132,7 @@
             text-align: center;
             color: gray;
             font-size: 0.9em;
-        }   
+        }
 
         footer a {
             color: white;
@@ -140,18 +147,14 @@
             color: white;
         }
 
-        footer .back-to-top a {
-            display: inline-block;
-            color: white;
-            text-decoration: none;
-            margin-top: 20px;
-        }
-
-        footer .social-icons {
+        .social-icons {
+            display: flex;
+            justify-content: center;
             margin: 50px 0;
+            gap: 10px;
         }
 
-        footer .social-icons a {
+        .social-icons a {
             display: inline-flex;
             width: 35px;
             height: 35px;
@@ -162,29 +165,18 @@
             transition: background-color 0.3s;
             justify-content: center;
             align-items: center;
-            margin: 4.5px;
-        }
-            
-        .social-icons a i {
-            transition: 00.4s all;
         }
 
-        .social-icons a:hover > i {
+        .social-icons a i {
+            transition: transform 0.4s;
+        }
+
+        .social-icons a:hover i {
             transform: scale(1.2) rotate(25deg);
         }
 
-        .social-icons {
-            display: flex;
-            gap: 10px;
-        }
-
         .back-to-top {
-            footer .back-to-top {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            font-size: 0.8em;
-            }
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -203,8 +195,8 @@
     
     <div class="container">
         <div class="block instagram">
-            <a href="https://www.instagram.com" target="_blank">
-                <div class="content">Instagram</div>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                <div class="content1">Visite o nosso Instagram</div>
             </a>
         </div>
 
@@ -216,11 +208,9 @@
 
         <div class="block">
             <div class="date">02 de Novembro de 2022</div>
-            
             <div class="content">
                 <a href="historias.html">São mais de 2 anos de História!</a>
             </div>
-            
         </div>
 
         <div class="block">
@@ -235,13 +225,13 @@
     <footer>
         <script src="https://kit.fontawesome.com/90fc9434d0.js" crossorigin="anonymous"></script>
         <div class="social-icons">
-                <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://www.facebook.com/?locale=pt_BR" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="https://x.com/?lang=pt-br" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="https://br.pinterest.com/" target="_blank"><i class="fa-brands fa-pinterest"></i></a>
-                <a href="https://open.spotify.com/intl-pt" target="_blank"><i class="fa-brands fa-spotify"></i></a>
-                <a href="https://soundcloud.com/" target="_blank"><i class="fa-brands fa-soundcloud"></i></i></a>
-                <a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></i></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/?locale=pt_BR" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://x.com/?lang=pt-br" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://br.pinterest.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-pinterest"></i></a>
+            <a href="https://open.spotify.com/intl-pt" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-spotify"></i></a>
+            <a href="https://soundcloud.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-soundcloud"></i></a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a>
         </div>
         <div>© 2024 Catolica Ltd</div>
         <div><a href="#">Política de Privacidade e Cookies</a></div>
