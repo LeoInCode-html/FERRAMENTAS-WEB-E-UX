@@ -237,6 +237,76 @@
         }
         }
 
+    /* Estilos para dispositivos móveis (320px a 480px) */
+    @media (max-width: 480px) {
+        header nav {
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        header nav a {
+            font-size: 0.8em;
+        }
+
+        .logo {
+            font-size: 1.5em;
+        }
+
+        .album-container1, .album-container2, .album-container3, .album-container4 {
+            padding: 80px;
+            height: auto;
+        }
+
+        .album-info h1 {
+            font-size: 1.5em;
+        }
+
+        .album-info .release-date, 
+        .album-info .description {
+            font-size: 0.9em;
+        }
+
+        .find-out-more {
+            font-size: 0.8em;
+            padding: 6px 12px;
+        }
+    }
+
+    /* Estilos para tablets (481px a 768px) */
+    @media (min-width: 481px) and (max-width: 768px) {
+        header nav {
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        header nav a {
+            font-size: 0.9em;
+        }
+
+        .logo {
+            font-size: 1.8em;
+        }
+
+        .album-container1, .album-container2, .album-container3, .album-container4 {
+            padding: 80px;
+            height: auto;
+        }
+
+        .album-info h1 {
+            font-size: 2em;
+        }
+
+        .album-info .release-date, 
+        .album-info .description {
+            font-size: 1em;
+        }
+
+        .find-out-more {
+            font-size: 0.9em;
+            padding: 8px 14px;
+        }
+    }
+
     </style>
 </head>
 <body>
