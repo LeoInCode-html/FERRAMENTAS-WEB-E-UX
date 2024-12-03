@@ -13,8 +13,8 @@
             color: #fff; /* Cor de texto branco */
         }
 
- /* Estilos do cabeçalho */
- header {
+        /* Estilos do cabeçalho */
+        header {
             background-color: #000;
             padding: 20px 0;
             position: sticky;
@@ -42,6 +42,37 @@
             color: #ddd;
         }
 
+        header .menu-btn {
+            display: none;
+        }
+        
+        header #menu-mobile {
+            display: none; /* Por padrão, o menu está escondido */
+            flex-direction: column;
+            background-color: #111;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            right: 0;
+            z-index: 999;
+        }
+
+        header #menu-mobile {
+            color: #fff;
+            padding: 10px;
+            text-decoration: none;
+            text-transform: uppercase;
+            border-bottom: 1px solid #333;
+        }
+
+        header #menu-mobile:hover {
+            background-color: #222;
+        }
+
+        header.menu-active #menu-mobile {
+            display: flex; /* Mostra o menu ao clicar */
+        }
+
         .logo {
             font-size: 2em;
             letter-spacing: 3px;
@@ -55,7 +86,7 @@
 
         /* Banner principal */
         .banner {
-            background-image: url('img/album-banner.jpg'); /* Substitua pela imagem correta */
+            background-image: url('static/imgs/banda-img shop.svg'); /* Substitua pela imagem correta */
             background-size: cover;
             background-position: center;
             position: relative;
@@ -223,27 +254,59 @@
         }
 
     }
+    @media (max-width: 480px) {
+        header nav {
+            gap: 10px;
+        }
+
+        header nav .menu-item-mobile {
+            display: none;
+            font-size: 0.8em;
+        }
+
+        header .menu-btn, #menu-mobile {
+            display: block;
+        }
+
+        .logo {
+            font-size: 1.5em;
+        }
+    }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
-    <header>
+     <!-- Cabeçalho (Header) -->
+     <header>
         <nav>
-            <a href="PaginaPrincipal.html">Música</a>
-            <a href="bio.html">Banda</a>
-            <a href="tour.html">Tour</a>
+            <a href="PaginaPrincipal.html" class="menu-item-mobile">Música</a>
+            <a href="bio.html" class="menu-item-mobile">Banda</a>
+            <a href="tour.html" class="menu-item-mobile">Tour</a>
             <div class="logo">Sombras do Amanhã</div>
-            <a href="shop.html">Loja</a>
-            <a href="journal.html">Jornal</a>
-            <a href="newsletter.html">Newsletter</a>
+            <a href="shop.html" class="menu-item-mobile">Loja</a>
+            <a href="journal.html" class="menu-item-mobile">Jornal</a>
+            <a href="newsletter.html" class="menu-item-mobile">Newsletter</a>
+            <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        </nav>
+        <nav id="menu-mobile">
+            <a href="PaginaPrincipalMobile.html">Música</a>
+            <a href="bioMobile.html">Banda</a>
+            <a href="tourMobile.html">Tour</a>
+            <a href="shopMobile.html">Loja</a>
+            <a href="journalMobile.html">Jornal</a>
+            <a href="newsletterMobile.html">Newsletter</a>
         </nav>
     </header>
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('header');
+            menu.classList.toggle('menu-active');
+        }
+    </script>
 
     <!-- Banner Principal -->
     <div class="banner">
         <div class="banner-content">
-            <img src="static/imgs/banda-img shop.svg">
             <h3>Made in the A.M.</h3>
             <p>The new album is out now, including the tracks "Drag Me Down", "End of the Day", "History", and more!</p>
             <button>Get the Album</button>
