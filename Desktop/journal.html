@@ -41,6 +41,37 @@
             color: white;
         }
 
+        header .menu-btn {
+            display: none;
+        }
+        
+        header #menu-mobile {
+            display: none; /* Por padrão, o menu está escondido */
+            flex-direction: column;
+            background-color: #111;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            right: 0;
+            z-index: 999;
+        }
+
+        header #menu-mobile {
+            color: #fff;
+            padding: 10px;
+            text-decoration: none;
+            text-transform: uppercase;
+            border-bottom: 1px solid #333;
+        }
+
+        header #menu-mobile:hover {
+            background-color: #222;
+        }
+
+        header.menu-active #menu-mobile {
+            display: flex; /* Mostra o menu ao clicar */
+        }
+
         .logo {
             font-size: 2em;
             letter-spacing: 3px;
@@ -187,20 +218,77 @@
         .back-to-top {
             margin-top: 20px;
         }
+
+        @media (max-width: 1024px) {
+        header nav {
+            gap: 10px;
+        }
+
+        header nav .menu-item-mobile {
+            display: none;
+            font-size: 0.8em;
+        }
+
+        header .menu-btn, #menu-mobile {
+            display: block;
+        }
+
+        .logo {
+            font-size: 1.5em;
+        }
+
+        .find-out-more {
+            font-size: 0.8em;
+            padding: 6px 12px;
+        }
+
+        .content1, .promo .overlay, .content {
+            font-size: 1.0em;
+        }
+
+        #Arroba {
+            font-size: 0.65em;
+        }
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+        header nav a {
+            font-size: 0.8em;;
+        }
+
+        .logo {
+            font-size: 2em;
+        }
+    }
     </style>
 </head>
 <body>
     <header>
         <nav>
+            <a href="PaginaPrincipal.html" class="menu-item-mobile">Música</a>
+            <a href="bio.html" class="menu-item-mobile">Banda</a>
+            <a href="tour.html" class="menu-item-mobile">Tour</a>
+            <div class="logo">Sombras do Amanhã</div>
+            <a href="shop.html" class="menu-item-mobile">Loja</a>
+            <a href="journal.html" class="menu-item-mobile">Jornal</a>
+            <a href="newsletter.html" class="menu-item-mobile">Newsletter</a>
+            <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        </nav>
+        <nav id="menu-mobile">
             <a href="PaginaPrincipal.html">Música</a>
             <a href="bio.html">Banda</a>
             <a href="tour.html">Tour</a>
-            <div class="logo">Sombras do Amanhã</div>
             <a href="shop.html">Loja</a>
             <a href="journal.html">Jornal</a>
             <a href="newsletter.html">Newsletter</a>
         </nav>
     </header>
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('header');
+            menu.classList.toggle('menu-active');
+        }
+    </script>
     
     <div class="container">
         <div class="block instagram">
@@ -225,7 +313,7 @@
         <div class="block">
             <div class="date">10 de Janeiro de 2023</div>
             <div class="content">
-                <a href="#">@SombrasdoAmanhã #Reflexos da Escuridão</a><br>
+                <a id="Arroba">@SombrasdoAmanhã</a><br><a>#Reflexos da Escuridão</a><br>
                 <a href="https://x.com/?lang=pt-br" target="_blank" rel="noopener noreferrer">X</a>
             </div>
         </div>
