@@ -268,10 +268,12 @@
         }
         }
 
-    /* Estilos para dispositivos móveis (320px a 480px) */
-    @media (max-width: 480px) {
+    /* Estilos(responsivo) para dispositivos móveis e tablets:
+            320px — 480px: dispositivos móveis
+            481px — 768px: iPads, tablets
+            769px — 1024px: telas pequenas, laptops  */
+    @media (max-width: 1024px) {
         header nav {
-            flex-direction: column;
             gap: 10px;
         }
 
@@ -308,41 +310,15 @@
         }
     }
 
-    /* Estilos para tablets (481px a 768px) */
-    @media (min-width: 481px) and (max-width: 768px) {
-        header nav {
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
+    @media (min-width: 769px) and (max-width: 1024px) {
         header nav a {
-            font-size: 0.9em;
+            font-size: 0.8em;;
         }
 
         .logo {
-            font-size: 1.8em;
-        }
-
-        .album-container1, .album-container2, .album-container3, .album-container4 {
-            padding: 80px;
-            height: auto;
-        }
-
-        .album-info h1 {
             font-size: 2em;
         }
-
-        .album-info .release-date, 
-        .album-info .description {
-            font-size: 1em;
-        }
-
-        .find-out-more {
-            font-size: 0.9em;
-            padding: 8px 14px;
-        }
     }
-
     </style>
 </head>
 <body>
@@ -359,12 +335,12 @@
             <button class="menu-btn" onclick="toggleMenu()">☰</button>
         </nav>
         <nav id="menu-mobile">
-            <a href="PaginaPrincipalMobile.html">Música</a>
-            <a href="bioMobile.html">Banda</a>
-            <a href="tourMobile.html">Tour</a>
-            <a href="shopMobile.html">Loja</a>
-            <a href="journalMobile.html">Jornal</a>
-            <a href="newsletterMobile.html">Newsletter</a>
+            <a href="PaginaPrincipal.html">Música</a>
+            <a href="bio.html">Banda</a>
+            <a href="tour.html">Tour</a>
+            <a href="shop.html">Loja</a>
+            <a href="journal.html">Jornal</a>
+            <a href="newsletter.html">Newsletter</a>
         </nav>
     </header>
     <script>
