@@ -44,7 +44,46 @@
         header nav a:hover {
             color: white;
         }
+
+        .menu-btn {
+            background-color: transparent;
+            border: none;
+            color: #fff;
+            font-size: 1.5em;
+            cursor: pointer;
+            display: block;
+        }
+
+        header .menu-btn {
+            display: none;
+        }
         
+        header #menu-mobile {
+            display: none; /* Por padrão, o menu está escondido */
+            flex-direction: column;
+            background-color: #111;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            right: 0;
+            z-index: 999;
+        }
+
+        header #menu-mobile {
+            color: #fff;
+            padding: 10px;
+            text-decoration: none;
+            text-transform: uppercase;
+            border-bottom: 1px solid #333;
+        }
+
+        header #menu-mobile:hover {
+            background-color: #222;
+        }
+
+        header.menu-active #menu-mobile {
+            display: flex; /* Mostra o menu ao clicar */
+        }
 
         .Titulo {
             font-size: 2em;
@@ -113,20 +152,73 @@
             gap: 10px;
         }
 
+        .logo {
+            font-size: 2em;
+        }
+
+        @media (max-width: 1024px) {
+        header nav {
+            gap: 10px;
+        }
+
+        header nav .menu-item-mobile {
+            display: none;
+            font-size: 0.8em;
+        }
+
+        header .menu-btn, #menu-mobile {
+            display: block;
+        }
+
+        .logo {
+            font-size: 1.5em;
+        }
+
+        .find-out-more {
+            font-size: 0.8em;
+            padding: 6px 12px;
+        }
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+        header nav a {
+            font-size: 0.8em;;
+        }
+
+        .logo {
+            font-size: 2em;
+        }
+    }
+
     </style>
 </head>
 <body>
     <header>
         <nav>
+            <a href="PaginaPrincipal.html" class="menu-item-mobile">Música</a>
+            <a href="bio.html" class="menu-item-mobile">Banda</a>
+            <a href="tour.html" class="menu-item-mobile">Tour</a>
+            <div class="logo">Sombras do Amanhã</div>
+            <a href="shop.html" class="menu-item-mobile">Loja</a>
+            <a href="journal.html" class="menu-item-mobile">Jornal</a>
+            <a href="newsletter.html" class="menu-item-mobile">Newsletter</a>
+            <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        </nav>
+        <nav id="menu-mobile">
             <a href="PaginaPrincipal.html">Música</a>
             <a href="bio.html">Banda</a>
             <a href="tour.html">Tour</a>
-            <div class="Titulo">Sombras do Amanhã</div>
             <a href="shop.html">Loja</a>
             <a href="journal.html">Jornal</a>
             <a href="newsletter.html">Newsletter</a>
         </nav>
     </header>
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('header');
+            menu.classList.toggle('menu-active');
+        }
+    </script>
 
     <main>
         <h1>Sombras do Amanhã é uma banda brasileira de rock alternativo formada em 2023. Misturando influências do pós-punk, indie e rock experimental, o grupo busca criar uma atmosfera sombria e introspectiva em suas composições, refletindo os dilemas e inquietações da sociedade contemporânea.
